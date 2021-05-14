@@ -1,3 +1,4 @@
+@use '../1-utilities/' as *;
 /* Box sizing rules */
 *,
 *::before,
@@ -5,15 +6,11 @@
   box-sizing: border-box;
 }
 
-
-*:focus-visible{
-  outline: 2px dashed color(reverse-main);
-  outline-offset: 2px;
-  transition:outline .3s ease-in-out;
-}
-
-*:active{
-  outline-offset: 4px;
+*:focus-visible,
+a:focus-visible{
+  outline: 3px dashed getColor(purple);
+  outline-offset: 5px;
+  transition:outline .3s ease;
 }
 
 /* Remove default margin */
@@ -44,18 +41,6 @@ a{
   text-decoration:none;
 }
 
-/*reset button*/
-button{
-  all:unset;
-  /*for IE*/
-  background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-}
 
 /* remove input autofill color settings*/
 input:-webkit-autofill,

@@ -32,18 +32,27 @@
         text-transform:uppercase;
         letter-spacing:rem(.1);
         @extend %b-100;
-        margin-bottom:.5rem;
         span{
             @extend %b-600;
-            color:getColor(purple);
+            background: -webkit-gradient(linear, left bottom,  right top,  from(hsl(272, 76%, 53%)), to(hsl(246, 66%, 61%)));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     }
     &__desc{
-        margin:.5rem 0 2.5rem;
-        span{
+        margin-bottom:2.5rem;
+        .big{
             font-size:rem(4);
             @extend %b-300;
             margin:0.2rem;
+        }
+        span{
+            opacity:0;
+            transition: all 1s linear;
+        }
+        span.animation{
+            opacity:1;
         }
     }
     &__buttons{
@@ -110,7 +119,7 @@
     }
 
     &__icon--weChat{
-        &:hover:before{
+        &::before{
             border-radius:5px;
             pointer-events:none;
             content:'ID : loveranma';
@@ -125,18 +134,26 @@
             width:7.7rem;
             height:3rem;
             background:getColor(purple);
+            opacity:0;
+            transition: opacity .3s ease-in-out;
         }
-        &:hover:after{
+        &::after{
             pointer-events:none;
             position:absolute;
             content:'';
             width:0;
             height:0;
             right:1rem;
-            top:0.9rem;
+            top:1rem;
             border-left:10px solid transparent;
             border-right:10px solid transparent;
             border-top:8px solid getColor(purple);;
+            opacity:0;
+            transition: opacity .3s ease-in-out;
+        }
+        &:hover:before,
+        &:hover:after{
+            opacity:1;
         }
     }
     &__address{
@@ -149,7 +166,6 @@
         flex-direction:column;
         letter-spacing:rem(.05);
         span{
-            margin-bottom:.5rem;
             @extend %b-400;
             font-size:rem(1.4);
         }

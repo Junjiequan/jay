@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <script type="module" src="./js/main.js"></script>
     <title>Jay Quan | portfolio</title>
 </head>
 <body class="light">
@@ -22,7 +23,7 @@
     <section class="hero">
         <div class="hero__wrapper">
             <h1 class="hero__visual"><span>Jay</span> Quan</h1>
-            <p class="hero__desc">"<span>L</span>ove gaming, love exercise, love coding & love beautiful things."</p>
+            <p class="hero__desc" data-js="font-animation">“ <span>L</span>ove gaming, love exercise, love coding & love beautiful things. ”</p>
             <div class="hero__buttons">
                 <a href="#about" class="hero__button"><span>About Jay</span></a>
                 <a href="#projects" class="hero__button"><span>View projects</span></a>
@@ -31,7 +32,7 @@
                 <a class="hero__icon" href="https://github.com/a331998513" aria-label="github-icon" target="_blank"><i class="fab fa-github-square"></i></a>
                 <a class="hero__icon" href="mailto: jaycontact7@gmail.com" aria-label="email-icon"><i class="fas fa-envelope-square"></i></a>
                 <a class="hero__icon" href="https://www.linkedin.com/in/junjiequan1991/" aria-label="linkedin-icon" target="_blank"><i class="fab fa-linkedin" ></i></a>
-                <span role="button" tabindex="0" class="hero__icon hero__icon--weChat"  aria-label="wechat-icon" ><i class="fab fa-weixin"></i></span>
+                <a role="button" tabindex="0" class="hero__icon hero__icon--weChat"  aria-label="wechat-icon" ><i class="fab fa-weixin"></i></a>
             </div>
             <address class="hero__address">
                 <p class="hero__location"><span> Current location</span> Esbjerg N 6715, Denmark</p>
@@ -44,12 +45,12 @@
                 <div class="about__image" ><img src="./images/about-image.jpg" alt="A nice looking image of working environment"></div>
                 <div class="about__info">
                     <div class="about__desc">
-                        <h2><span class="about__desc--highlight">About</span> me</h2>
+                        <h2 ><span class="about__desc--highlight">About</span> me</h2>
                         <p class="about__desc--text" >
                             A self taught front-end developer who loves coding & design.<br>
                             My front-end learning journey started since January 2021.<br>
-                            The intention of learning front-end was to solidify understanding of web product management and web technologies.<br>
-                            I believe the best way to learn is to create your own thing and solve problems along the way.
+                            I love to create things my own from scratch and I also love to learn from projects of other good developers.<br>
+                            I strive to improve my knowledge of accessibility and always pay attention for better user experiences.<br>
                         </p>
                         <h3>Educational background</h3>
                         <p class="about__desc--text" >
@@ -72,6 +73,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="projects">
+        <div class="projects__wrapper">
+            <h2 class="projects__title"><span class="projects__title--highlight">Project</span> portfolio</h2>
+            <div class="projects__filter" data-js="project-filter"></div>
         </div>
     </section>
 </body>

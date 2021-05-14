@@ -2,7 +2,6 @@
 @use '../2-components/' as *;
 
 .about{
-    height:2000px;
     margin:5rem auto;
     display:flex;
     justify-content:center;
@@ -76,35 +75,63 @@
     &__techStack{
         display:flex;
         font-size:rem(4);
+        transition:all .3s linear;
         &:not(:last-child){
             margin-bottom:1.5rem;
         }
         &--hover{
-            margin-right:2rem;
-            i{
-                transition:all .3s ease;
-            }
+            display:block;
+            transition:all .2s linear;
+            margin-right:1.5rem;
+            background: -webkit-gradient(linear, left top, left bottom, from(hsl(0, 0%, 42%)), to(hsl(271, 82%, 31%)));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size:50% 400%;
             &:hover{
-                background: -webkit-gradient(linear, left top, left bottom, from(hsl(272, 76%, 53%)), to(hsl(260, 100%, 44%)));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                background-size:100% 120%;
+                filter:brightness(1.4);
             }
         }
     }
     @media screen and (max-width:881px){
         margin:2rem auto;
+        &__desc{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            &--highlight{
+                color:getColor(purple);
+            }
+            &--text{
+                line-height:1.6rem;
+                font-size:rem(1.4);
+            }
+        }
         &__image{
-            margin:0 1rem;
+            margin:0 1rem 1rem;
             flex:auto;
-            max-width:30rem;
-            max-height:20rem;
+            max-height:15rem;
             img{
                 object-fit:cover;
             }
         }
         &__info{
             flex:auto;
+            padding:0;
             margin:1rem;
+            text-align:center;
+            &::before{
+                content:'';
+                display:flex;
+                height:1px;
+                width:8rem;
+                top:0;bottom:0;left:0;right:0;
+                justify-content:center;
+                margin:0 auto;
+                background:getColor(lightGray);
+                position:absolute;
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ h1, p {
   font-weight: 200;
 }
 
-.hero__desc span {
+.hero__desc .big {
   font-weight: 300;
 }
 
@@ -41,7 +41,7 @@ h2, h3 {
   font-weight: 500;
 }
 
-.hero__visual span, .hero__icon--weChat:hover:before {
+.hero__visual span, .hero__icon--weChat::before {
   font-weight: 600;
 }
 
@@ -84,14 +84,11 @@ h2, h3 {
   box-sizing: border-box;
 }
 
-*:focus-visible {
-  outline: 2px dashed color(reverse-main);
-  outline-offset: 2px;
-  transition: outline 0.3s ease-in-out;
-}
-
-*:active {
-  outline-offset: 4px;
+*:focus-visible,
+a:focus-visible {
+  outline: 3px dashed var(--color-purple);
+  outline-offset: 5px;
+  transition: outline 0.3s ease;
 }
 
 /* Remove default margin */
@@ -120,19 +117,6 @@ li {
 /* remove anchor decoration*/
 a {
   text-decoration: none;
-}
-
-/*reset button*/
-button {
-  all: unset;
-  /*for IE*/
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
 }
 
 /* remove input autofill color settings*/
@@ -216,6 +200,7 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  color: var(--color-title);
   line-height: 4.2rem;
   letter-spacing: -0.05rem;
 }
@@ -231,6 +216,11 @@ p {
   line-height: 2rem;
 }
 
+@media screen and (max-width: 700px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
 .nav {
   z-index: 99;
   position: fixed;
@@ -331,17 +321,26 @@ p {
 .hero__visual {
   text-transform: uppercase;
   letter-spacing: 0.0625rem;
-  margin-bottom: 0.5rem;
 }
 .hero__visual span {
-  color: var(--color-purple);
+  background: -webkit-gradient(linear, left bottom, right top, from(#8d2ce2), to(#675add));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero__desc {
-  margin: 0.5rem 0 2.5rem;
+  margin-bottom: 2.5rem;
 }
-.hero__desc span {
+.hero__desc .big {
   font-size: 2.5rem;
   margin: 0.2rem;
+}
+.hero__desc span {
+  opacity: 0;
+  transition: all 1s linear;
+}
+.hero__desc span.animation {
+  opacity: 1;
 }
 .hero__buttons {
   display: flex;
@@ -408,7 +407,7 @@ p {
 .hero__icon:hover:not(.hero__icon--weChat) {
   transform: rotate(360deg);
 }
-.hero__icon--weChat:hover:before {
+.hero__icon--weChat::before {
   border-radius: 5px;
   pointer-events: none;
   content: "ID : loveranma";
@@ -423,18 +422,25 @@ p {
   width: 7.7rem;
   height: 3rem;
   background: var(--color-purple);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
-.hero__icon--weChat:hover:after {
+.hero__icon--weChat::after {
   pointer-events: none;
   position: absolute;
   content: "";
   width: 0;
   height: 0;
   right: 1rem;
-  top: 0.9rem;
+  top: 1rem;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 8px solid var(--color-purple);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.hero__icon--weChat:hover:before, .hero__icon--weChat:hover:after {
+  opacity: 1;
 }
 .hero__address {
   margin-top: 2.4rem;
@@ -447,12 +453,10 @@ p {
   letter-spacing: 0.03125rem;
 }
 .hero__location span {
-  margin-bottom: 0.5rem;
   font-size: 0.875rem;
 }
 
 .about {
-  height: 2000px;
   margin: 5rem auto;
   display: flex;
   justify-content: center;
@@ -516,7 +520,7 @@ p {
 .about__desc {
   width: 100%;
 }
-.about__desc--highlight {
+.about__desc--highlight, .projects__title--highlight {
   color: var(--color-purple);
 }
 .about__desc--text {
@@ -528,30 +532,45 @@ p {
 .about__techStack {
   display: flex;
   font-size: 2.5rem;
+  transition: all 0.3s linear;
 }
 .about__techStack:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 .about__techStack--hover {
-  margin-right: 2rem;
-}
-.about__techStack--hover i {
-  transition: all 0.3s ease;
+  display: block;
+  transition: all 0.2s linear;
+  margin-right: 1.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6b6b6b), to(#510e90));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 50% 400%;
 }
 .about__techStack--hover:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#8d2ce2), to(#4b00e0));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-size: 100% 120%;
+  filter: brightness(1.4);
 }
 @media screen and (max-width: 881px) {
   .about {
     margin: 2rem auto;
   }
+  .about__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about__desc--highlight, .projects__title--highlight {
+    color: var(--color-purple);
+  }
+  .about__desc--text {
+    line-height: 1.6rem;
+    font-size: 0.875rem;
+  }
   .about__image {
-    margin: 0 1rem;
+    margin: 0 1rem 1rem;
     flex: auto;
-    max-width: 30rem;
-    max-height: 20rem;
+    max-height: 15rem;
   }
   .about__image img {
     -o-object-fit: cover;
@@ -559,6 +578,47 @@ p {
   }
   .about__info {
     flex: auto;
+    padding: 0;
     margin: 1rem;
+    text-align: center;
   }
+  .about__info::before {
+    content: "";
+    display: flex;
+    height: 1px;
+    width: 8rem;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    margin: 0 auto;
+    background: var(--color-lightGray);
+    position: absolute;
+  }
+}
+
+.projects {
+  margin: 7rem auto 5rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.projects__wrapper {
+  margin: 0 2rem;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.projects__title {
+  position: relative;
+}
+.projects__title::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--color-lightGray);
 }/*# sourceMappingURL=main.css.map */
