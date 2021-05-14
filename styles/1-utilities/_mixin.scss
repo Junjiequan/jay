@@ -1,0 +1,37 @@
+@mixin font-weight($weight){
+    $weights:(
+        thin:100,
+        extraThin:200,
+        light:300,
+        regular:400,
+        medium: 500,
+        semiBold: 600,
+        bold:700
+    );
+    $output:$weight;
+    @if map-has-key($weights,$weight){
+        $output:map-get($weights, $weight)
+    };
+    font-weight:$output;
+}
+%b-100{
+    @include font-weight(thin)
+}
+%b-200{
+    @include font-weight(extraThin)
+}
+%b-300{
+    @include font-weight(light)
+}
+%b-400{
+    @include font-weight(regular)
+}
+%b-500{
+    @include font-weight(medium)
+}
+%b-600{
+    @include font-weight(semiBold)
+}
+%b-700{
+    @include font-weight(bold)
+}

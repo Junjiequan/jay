@@ -1,0 +1,30 @@
+@use '../1-utilities/' as *;
+
+%button{
+    min-width:7rem;
+    font-size:rem(1.2);
+    letter-spacing:rem(.2);
+    border-radius:5px;
+    padding:.5rem 1.5rem;
+    background:getColor(gray);
+    position:relative;
+    box-shadow:0 0 10px rgba($color: #ffffff, $alpha: 0.3);
+    &::before{
+        border-radius:5px;
+        position:absolute;
+        content:'';
+        width:0;
+        height:100%;
+        display:flex;
+        top:0;left:0;bottom:0;right:0;
+        justify-content:center;
+        background:$purpleTOblue;
+        transition: all .3s ease-out;
+    }
+    &:hover:before{
+        width:100%;
+    }
+    &:active{
+        transform:translateY(2px);
+    }
+}

@@ -1,0 +1,68 @@
+@use '../1-utilities/' as *;
+
+.nav{
+    z-index:99;
+    position:fixed;
+    top:0;left:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto;
+    background:rgba($color: hsl(0, 0%, 3%), $alpha: 0.8);
+    backdrop-filter: blur(2px);
+    height:4rem;
+    width:100%;
+    box-shadow:0 3px 5px rgba($color: hsl(0, 0%, 3%), $alpha: 0.4);
+    &__wrapper{
+        margin:0 2rem;
+        height:100%;
+        max-width:1100px;
+        width:100%;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+    &__logo{
+        font-family:$logo;
+        color:getColor(white);
+        font-size:rem(2.5);
+        transition: color .3s ease;
+        &:hover{
+            color:getColor(purple)
+        }
+    }
+    &__menu{
+        height:100%;
+        display:flex;
+        font-size:rem(1.4);
+    }
+    &__link{
+        position:relative;
+        display:flex;
+        &:not(:last-child){
+            margin-right:2rem;
+        }
+        a{
+            display:flex;
+            align-items:center;
+            transition: all .3s ease;
+            color:getColor(white);
+            @extend %b-400;
+            &::after{
+                position:absolute;
+                content:'';
+                bottom:0;
+                width:100%;
+                height:0;
+                transition: height .3s ease-in-out;
+                background:$purpleTOblue;
+            }
+            &:hover::after{
+                height:4px;
+            }
+        }
+        &:hover a{
+            color:getColor(purple);;
+        }
+    }
+}

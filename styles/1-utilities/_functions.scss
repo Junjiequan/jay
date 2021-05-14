@@ -1,0 +1,21 @@
+@use './variables' as *;
+
+// Always prepared for color theme ;)
+.light{
+    @each $name, $color in $light{
+        --color-#{$name} : #{$color};
+    }
+}
+// .dark{
+//     @each $name, $color in $light{
+//         --color-#{$name} : #{$color};
+//     }
+// }
+
+@function getColor($colorName){
+    @return var(--color-#{$colorName})
+};
+
+@function rem($pixels) {
+    @return ($pixels / $body-font) * 10rem;
+};

@@ -1,0 +1,110 @@
+@use '../1-utilities/' as *;
+@use '../2-components/' as *;
+
+.about{
+    height:2000px;
+    margin:5rem auto;
+    display:flex;
+    justify-content:center;
+    position:relative;
+    &__wrapper{
+        margin:0 2rem;
+        max-width:1100px;
+        width:100%;
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        
+    }
+    &__profile{
+        width:100%;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    &__image{
+        display:flex;
+        justify-content: center;
+        margin-top:1rem;
+        cursor:pointer;
+        border-radius:5px;
+        flex: 0 0 25rem;
+        overflow:hidden;
+        img{
+            transition:transform 1s ease;
+            object-fit: contain;
+        }
+        &:hover > img{
+            transform:scale(1.1);
+        }
+    }
+    &__info{
+        flex:1;
+        min-width:20rem;
+        margin-top:1rem;
+        margin-left:5rem;
+        padding-left:5rem;
+        display:flex;
+        justify-content: center;
+        position:relative;
+        text-align:left;
+        &::before{
+            content:'';
+            display:flex;
+            height:8rem;
+            width:1px;
+            top:0;bottom:0;left:0;
+            align-items:center;
+            margin:auto 0;
+            background:getColor(lightGray);
+            position:absolute;
+        }
+    }
+    &__desc{
+        width:100%;
+        &--highlight{
+            color:getColor(purple);
+        }
+        &--text{
+            color:getColor(text);
+            line-height:1.6rem;
+            font-size:rem(1.4);
+            margin-bottom:1.5rem;
+            @extend %b-400;
+        }
+    }
+    &__techStack{
+        display:flex;
+        font-size:rem(4);
+        &:not(:last-child){
+            margin-bottom:1.5rem;
+        }
+        &--hover{
+            margin-right:2rem;
+            i{
+                transition:all .3s ease;
+            }
+            &:hover{
+                background: -webkit-gradient(linear, left top, left bottom, from(hsl(272, 76%, 53%)), to(hsl(260, 100%, 44%)));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+    @media screen and (max-width:881px){
+        margin:2rem auto;
+        &__image{
+            margin:0 1rem;
+            flex:auto;
+            max-width:30rem;
+            max-height:20rem;
+            img{
+                object-fit:cover;
+            }
+        }
+        &__info{
+            flex:auto;
+            margin:1rem;
+        }
+    }
+}

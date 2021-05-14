@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+//font
+$body-font: 16;
+$logo: 'Cedarville Cursive', cursive;
+
+//colors
+$white:hsl(0, 0%, 100%);
+$lightGray: hsl(0, 0%, 80%);
+$gray: hsl(0, 0%, 73%);
+$darkGray: hsl(0, 0%, 51%);
+$veryDarkGray:hsl(0, 0%, 22%);
+$black:hsl(0, 0%, 7%);
+$purpleTOblue: linear-gradient(to right, hsl(272, 76%, 53%), hsl(260, 100%, 44%));
+$purple:hsl(272, 76%, 53%);
+
+$light:(
+    white:$white,
+    lightGray:$lightGray,
+    gray:$gray,
+    black:$black,
+    purpleToblue:$purpleTOblue,
+    purple:$purple,
+    text:$darkGray,
+    title:$veryDarkGray,
+)

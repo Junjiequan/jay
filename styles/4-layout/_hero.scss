@@ -1,0 +1,157 @@
+@use '../1-utilities/' as *;
+@use '../2-components/' as *;
+
+.hero{
+    min-height:100vh;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    position:relative;
+    align-items:center;
+    background:url(../images/hero-bg-desktop.jpg) no-repeat center/cover;
+    &::before{
+        z-index:1;
+        content:'';
+        position:absolute;
+        width:100%;
+        height:100%;
+        background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
+        backdrop-filter: blur(1px);
+    }
+    &__wrapper{
+        margin:0 2rem;
+        z-index:2;
+        max-width:1100px;
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        color:getColor(white);
+        text-align:center;
+    }
+    &__visual{
+        text-transform:uppercase;
+        letter-spacing:rem(.1);
+        @extend %b-100;
+        margin-bottom:.5rem;
+        span{
+            @extend %b-600;
+            color:getColor(purple);
+        }
+    }
+    &__desc{
+        margin:.5rem 0 2.5rem;
+        span{
+            font-size:rem(4);
+            @extend %b-300;
+            margin:0.2rem;
+        }
+    }
+    &__buttons{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        margin:0 0 2.5rem;
+    }
+    &__button{
+        display:flex;
+        justify-content:center;
+        width:10rem;
+        text-align:center;
+        margin:.4rem 2rem;
+        position:relative;
+        @extend %button;
+        span{
+            display:block; 
+            position:relative;
+            color:getColor(black);
+            transition:color .3s ease;
+            text-shadow:0 0 1px rgba($color: #000000, $alpha: 0.5)
+        }
+        &:hover > span{
+            color:getColor(white);
+        }
+    }
+    &__links{
+        display:flex;
+        position:relative;
+        height:7rem;
+        align-items:center;
+        &::before{
+            position:absolute;
+            content:'';
+            top:0;left:0;right:0;
+            margin:0 auto;
+            display:flex;
+            justify-content:center;
+            height:1px;
+            width:4rem;
+            background:getColor(white);
+        }
+        &::after{
+            position:absolute;
+            content:'';
+            bottom:0;left:0;right:0;
+            margin:0 auto;
+            display:flex;
+            justify-content:center;
+            height:1px;
+            width:4rem;
+            background:getColor(white);
+        }
+    }
+    &__icon{
+        margin: 0 .8rem;
+        color:getColor(white);
+        font-size:rem(3.2);
+        transition:transform .4s ease-in-out;
+        &:hover:not(.hero__icon--weChat){
+            transform:rotate(360deg);
+        }
+    }
+
+    &__icon--weChat{
+        &:hover:before{
+            border-radius:5px;
+            pointer-events:none;
+            content:'ID : loveranma';
+            display:flex;
+            position:absolute;
+            font-size:rem(1.2);
+            color:getColor(white);
+            @extend %b-600;
+            right:0;top:-2rem;
+            align-items:center;
+            padding:0 1rem;
+            width:7.7rem;
+            height:3rem;
+            background:getColor(purple);
+        }
+        &:hover:after{
+            pointer-events:none;
+            position:absolute;
+            content:'';
+            width:0;
+            height:0;
+            right:1rem;
+            top:0.9rem;
+            border-left:10px solid transparent;
+            border-right:10px solid transparent;
+            border-top:8px solid getColor(purple);;
+        }
+    }
+    &__address{
+        margin-top:2.4rem;
+    }
+    &__location{
+        font-style:normal;
+        font-size:rem(1.2);
+        display:flex;
+        flex-direction:column;
+        letter-spacing:rem(.05);
+        span{
+            margin-bottom:.5rem;
+            @extend %b-400;
+            font-size:rem(1.4);
+        }
+    }
+}

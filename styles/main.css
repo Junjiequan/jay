@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.light {
+  --color-white: white;
+  --color-lightGray: #cccccc;
+  --color-gray: #bababa;
+  --color-black: #121212;
+  --color-purpleToblue: linear-gradient(to right, #8d2ce2, #4b00e0);
+  --color-purple: #8d2ce2;
+  --color-text: #828282;
+  --color-title: #383838;
+}
+
+.hero__visual {
+  font-weight: 100;
+}
+
+h1, p {
+  font-weight: 200;
+}
+
+.hero__desc span {
+  font-weight: 300;
+}
+
+.about__desc--text, .hero__location span, .nav__link a {
+  font-weight: 400;
+}
+
+h2, h3 {
+  font-weight: 500;
+}
+
+.hero__visual span, .hero__icon--weChat:hover:before {
+  font-weight: 600;
+}
+
+.hero__button {
+  min-width: 7rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.125rem;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  background: var(--color-gray);
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+.hero__button::before {
+  border-radius: 5px;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  background: linear-gradient(to right, #8d2ce2, #4b00e0);
+  transition: all 0.3s ease-out;
+}
+.hero__button:hover:before {
+  width: 100%;
+}
+.hero__button:active {
+  transform: translateY(2px);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px dashed color(reverse-main);
+  outline-offset: 2px;
+  transition: outline 0.3s ease-in-out;
+}
+
+*:active {
+  outline-offset: 4px;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list],
+li {
+  list-style: none;
+}
+
+/* remove anchor decoration*/
+a {
+  text-decoration: none;
+}
+
+/*reset button*/
+button {
+  all: unset;
+  /*for IE*/
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* remove input autofill color settings*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px color(input) inset !important;
+  -webkit-text-fill-color: color(font) !important;
+}
+
+/* Set core root defaults */
+html,
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background: #e0e0e0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+h1 {
+  font-size: 2.1875rem;
+  line-height: 4.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 4.2rem;
+  letter-spacing: -0.05rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 2.8rem;
+  color: var(--color-title);
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+
+.nav {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: rgba(8, 8, 8, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  height: 4rem;
+  width: 100%;
+  box-shadow: 0 3px 5px rgba(8, 8, 8, 0.4);
+}
+.nav__wrapper {
+  margin: 0 2rem;
+  height: 100%;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__logo {
+  font-family: "Cedarville Cursive", cursive;
+  color: var(--color-white);
+  font-size: 1.5625rem;
+  transition: color 0.3s ease;
+}
+.nav__logo:hover {
+  color: var(--color-purple);
+}
+.nav__menu {
+  height: 100%;
+  display: flex;
+  font-size: 0.875rem;
+}
+.nav__link {
+  position: relative;
+  display: flex;
+}
+.nav__link:not(:last-child) {
+  margin-right: 2rem;
+}
+.nav__link a {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: var(--color-white);
+}
+.nav__link a::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  transition: height 0.3s ease-in-out;
+  background: linear-gradient(to right, #8d2ce2, #4b00e0);
+}
+.nav__link a:hover::after {
+  height: 4px;
+}
+.nav__link:hover a {
+  color: var(--color-purple);
+}
+
+.hero {
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  background: url(../images/hero-bg-desktop.jpg) no-repeat center/cover;
+}
+.hero::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+.hero__wrapper {
+  margin: 0 2rem;
+  z-index: 2;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: var(--color-white);
+  text-align: center;
+}
+.hero__visual {
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  margin-bottom: 0.5rem;
+}
+.hero__visual span {
+  color: var(--color-purple);
+}
+.hero__desc {
+  margin: 0.5rem 0 2.5rem;
+}
+.hero__desc span {
+  font-size: 2.5rem;
+  margin: 0.2rem;
+}
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 2.5rem;
+}
+.hero__button {
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  text-align: center;
+  margin: 0.4rem 2rem;
+  position: relative;
+}
+.hero__button span {
+  display: block;
+  position: relative;
+  color: var(--color-black);
+  transition: color 0.3s ease;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.hero__button:hover > span {
+  color: var(--color-white);
+}
+.hero__links {
+  display: flex;
+  position: relative;
+  height: 7rem;
+  align-items: center;
+}
+.hero__links::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  height: 1px;
+  width: 4rem;
+  background: var(--color-white);
+}
+.hero__links::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  height: 1px;
+  width: 4rem;
+  background: var(--color-white);
+}
+.hero__icon {
+  margin: 0 0.8rem;
+  color: var(--color-white);
+  font-size: 2rem;
+  transition: transform 0.4s ease-in-out;
+}
+.hero__icon:hover:not(.hero__icon--weChat) {
+  transform: rotate(360deg);
+}
+.hero__icon--weChat:hover:before {
+  border-radius: 5px;
+  pointer-events: none;
+  content: "ID : loveranma";
+  display: flex;
+  position: absolute;
+  font-size: 0.75rem;
+  color: var(--color-white);
+  right: 0;
+  top: -2rem;
+  align-items: center;
+  padding: 0 1rem;
+  width: 7.7rem;
+  height: 3rem;
+  background: var(--color-purple);
+}
+.hero__icon--weChat:hover:after {
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  right: 1rem;
+  top: 0.9rem;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 8px solid var(--color-purple);
+}
+.hero__address {
+  margin-top: 2.4rem;
+}
+.hero__location {
+  font-style: normal;
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.03125rem;
+}
+.hero__location span {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.about {
+  height: 2000px;
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.about__wrapper {
+  margin: 0 2rem;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.about__profile {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.about__image {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  flex: 0 0 25rem;
+  overflow: hidden;
+}
+.about__image img {
+  transition: transform 1s ease;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.about__image:hover > img {
+  transform: scale(1.1);
+}
+.about__info {
+  flex: 1;
+  min-width: 20rem;
+  margin-top: 1rem;
+  margin-left: 5rem;
+  padding-left: 5rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: left;
+}
+.about__info::before {
+  content: "";
+  display: flex;
+  height: 8rem;
+  width: 1px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  margin: auto 0;
+  background: var(--color-lightGray);
+  position: absolute;
+}
+.about__desc {
+  width: 100%;
+}
+.about__desc--highlight {
+  color: var(--color-purple);
+}
+.about__desc--text {
+  color: var(--color-text);
+  line-height: 1.6rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+.about__techStack {
+  display: flex;
+  font-size: 2.5rem;
+}
+.about__techStack:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.about__techStack--hover {
+  margin-right: 2rem;
+}
+.about__techStack--hover i {
+  transition: all 0.3s ease;
+}
+.about__techStack--hover:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#8d2ce2), to(#4b00e0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (max-width: 881px) {
+  .about {
+    margin: 2rem auto;
+  }
+  .about__image {
+    margin: 0 1rem;
+    flex: auto;
+    max-width: 30rem;
+    max-height: 20rem;
+  }
+  .about__image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .about__info {
+    flex: auto;
+    margin: 1rem;
+  }
+}/*# sourceMappingURL=main.css.map */
