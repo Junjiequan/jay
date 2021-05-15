@@ -23,9 +23,12 @@
         justify-content:space-between;
     }
     &__logo{
+        display:flex;
+        align-items:center;
         font-family:$logo;
         color:getColor(white);
         font-size:rem(2.5);
+        padding-bottom:.5rem;
         transition: color .3s ease;
         &:hover{
             color:getColor(purple)
@@ -39,10 +42,13 @@
     &__link{
         position:relative;
         display:flex;
+        height:100%;
+        align-items:center;
         &:not(:last-child){
             margin-right:2rem;
         }
         a{
+            height:1rem;
             display:flex;
             align-items:center;
             transition: all .3s ease;
