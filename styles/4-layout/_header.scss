@@ -41,6 +41,7 @@
         font-size:rem(1.4);
     }
     &__link{
+        cursor:pointer;
         position:relative;
         display:flex;
         height:100%;
@@ -52,7 +53,7 @@
             height:1rem;
             display:flex;
             align-items:center;
-            transition: all .3s ease;
+            transition: all .2s ease;
             color:getColor(white);
             @extend %b-400;
             &::after{
@@ -61,15 +62,17 @@
                 bottom:0;
                 width:100%;
                 height:0;
-                transition: height .3s ease-in-out;
+                transition: height .2s ease-in-out;
                 background:$purpleTOblue;
             }
-            &:hover::after{
-                height:4px;
-            }
         }
-        &:hover a{
+        &:hover a,
+        &:focus-within a{
             color:getColor(purple);;
+        }
+        &:hover a::after,
+        &:focus-within a::after{
+            height:4px;
         }
     }
 }

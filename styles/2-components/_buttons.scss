@@ -27,4 +27,7 @@
     &:active{
         transform:translateY(2px);
     }
+    &:focus-within:before{
+        width:100%;
+    }
 }

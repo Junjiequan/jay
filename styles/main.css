@@ -76,6 +76,9 @@ h1, p {
 .projects__button:active, .hero__button:active, .portfolio__button:active {
   transform: translateY(2px);
 }
+.projects__button:focus-within:before, .hero__button:focus-within:before, .portfolio__button:focus-within:before {
+  width: 100%;
+}
 
 /* Box sizing rules */
 *,
@@ -278,6 +281,7 @@ p {
   font-size: 0.875rem;
 }
 .nav__link {
+  cursor: pointer;
   position: relative;
   display: flex;
   height: 100%;
@@ -290,7 +294,7 @@ p {
   height: 1rem;
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   color: var(--color-white);
 }
 .nav__link a::after {
@@ -299,14 +303,14 @@ p {
   bottom: 0;
   width: 100%;
   height: 0;
-  transition: height 0.3s ease-in-out;
+  transition: height 0.2s ease-in-out;
   background: linear-gradient(to right, #8d2ce2, #4b00e0);
 }
-.nav__link a:hover::after {
-  height: 4px;
-}
-.nav__link:hover a {
+.nav__link:hover a, .nav__link:focus-within a {
   color: var(--color-purple);
+}
+.nav__link:hover a::after, .nav__link:focus-within a::after {
+  height: 4px;
 }
 
 .portfolio {
@@ -377,7 +381,7 @@ p {
   color: black;
   transition: color 0.3s ease;
 }
-.portfolio__button:hover > span {
+.portfolio__button:hover > span, .portfolio__button:focus-within > span {
   color: var(--color-white);
 }
 .portfolio__skills {
@@ -405,6 +409,9 @@ p {
   font-size: 1.25rem;
 }
 @media screen and (max-width: 600px) {
+  .portfolio {
+    margin-top: 2rem;
+  }
   .portfolio__image {
     height: 15rem;
   }
@@ -515,7 +522,7 @@ p {
   transition: color 0.3s ease;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 }
-.hero__button:hover > span {
+.hero__button:hover > span, .hero__button:focus-within > span {
   color: var(--color-white);
 }
 .hero__links {
@@ -560,6 +567,10 @@ p {
 .hero__icon:hover:not(.hero__icon--weChat) {
   transform: rotate(360deg);
 }
+.hero__icon--weChat {
+  cursor: pointer;
+  outline: none;
+}
 .hero__icon--weChat::before {
   border-radius: 5px;
   pointer-events: none;
@@ -592,7 +603,7 @@ p {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-.hero__icon--weChat:hover:before, .hero__icon--weChat:hover:after {
+.hero__icon--weChat:hover:before, .hero__icon--weChat:hover:after, .hero__icon--weChat:focus-within:before, .hero__icon--weChat:focus-within:after {
   opacity: 1;
 }
 .hero__address {
@@ -824,12 +835,16 @@ p {
   margin-left: 0.7rem;
   transition: transform 0.5s ease-in-out;
 }
-.projects__button:hover i {
+.projects__button:hover i, .projects__button:focus-within i {
   transform: translateX(1rem);
 }
 @media screen and (max-width: 600px) {
   .projects__wrapper {
     margin: 0 1rem;
+  }
+  .projects__title {
+    justify-content: center;
+    text-align: center;
   }
   .projects__title:after {
     content: "";
@@ -845,6 +860,9 @@ p {
     background: var(--color-lightGray);
   }
   .projects__title--small {
+    display: flex;
+    justify-content: center;
     padding: 0;
+    line-height: 1.5rem;
   }
 }/*# sourceMappingURL=main.css.map */

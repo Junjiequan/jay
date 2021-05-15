@@ -74,7 +74,8 @@
             margin-left:.7rem;
             transition:transform .5s ease-in-out;
         }
-        &:hover i {
+        &:hover i ,
+        &:focus-within i{
             transform:translateX(1rem);
         }
     }
@@ -83,6 +84,8 @@
             margin:0 1rem;
         }
         &__title{
+            justify-content:center;
+            text-align:center;
             &:after{
                 content:'';
                 position:absolute;
@@ -96,7 +99,10 @@
                 background:getColor(lightGray);
             }
             &--small{
+                display:flex;
+                justify-content:center;
                 padding:0;
+                line-height:1.5rem;
             }
         }
     }

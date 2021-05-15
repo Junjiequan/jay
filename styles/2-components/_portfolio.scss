@@ -66,9 +66,11 @@
             color:black;
             transition:color .3s ease;
         }
-        &:hover > span{
+        &:hover > span,
+        &:focus-within > span{
             color:getColor(white);
         }
+        
     }
     &__skills{
         display:flex;
@@ -89,6 +91,7 @@
         @extend %b-400;
     }
     @media screen and (max-width:600px){
+        margin-top:2rem;
         &__image{
             height:15rem;
         }

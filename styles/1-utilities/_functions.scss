@@ -6,11 +6,6 @@
         --color-#{$name} : #{$color};
     }
 }
-// .dark{
-//     @each $name, $color in $light{
-//         --color-#{$name} : #{$color};
-//     }
-// }
 
 @function getColor($colorName){
     @return var(--color-#{$colorName})

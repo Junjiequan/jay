@@ -76,7 +76,8 @@
             transition:color .3s ease;
             text-shadow:0 0 1px rgba($color: #000000, $alpha: 0.5)
         }
-        &:hover > span{
+        &:hover > span,
+        &:focus-within > span{
             color:getColor(white);
         }
     }
@@ -120,6 +121,8 @@
     }
 
     &__icon--weChat{
+        cursor:pointer;
+        outline:none;
         &::before{
             border-radius:5px;
             pointer-events:none;
@@ -153,7 +156,9 @@
             transition: opacity .3s ease-in-out;
         }
         &:hover:before,
-        &:hover:after{
+        &:hover:after,
+        &:focus-within:before,
+        &:focus-within:after{
             opacity:1;
         }
     }

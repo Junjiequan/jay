@@ -3,11 +3,9 @@ export const fontAnimation = () =>{
     const fontSplit = font.innerText.split('');
     font.innerText = '';
     fontSplit.map(text =>{
-        if(text === 'L'){
-            font.innerHTML = font.innerHTML + "<span class='big'>" + text + "</span>"
-        } else {
-            font.innerHTML = font.innerHTML + "<span>" + text + "</span>"
-        }
+        text === 'L'
+        ? font.innerHTML = font.innerHTML + "<span class='big'>" + text + "</span>"
+        : font.innerHTML = font.innerHTML + "<span>" + text + "</span>"
     })
     //font animation
     let char = 0;
