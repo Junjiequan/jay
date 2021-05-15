@@ -91,16 +91,6 @@
     @media screen and (max-width:600px){
         &__image{
             height:15rem;
-            // &::after{
-            //     z-index:1;
-            //     content:'';
-            //     display:block;
-            //     position:absolute;
-            //     bottom:0;
-            //     height:3rem;
-            //     width:100%;
-            //     background: rgba($color: #cfcfcf, $alpha: 0.4);
-            // }
         }
         &__image--hover{
             z-index:2;
@@ -124,6 +114,7 @@
             }
             &:hover span{
                 color:getColor(white);
+                all:unset;
             }
             &:before{
                 all:unset;
