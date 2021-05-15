@@ -45,6 +45,6 @@ const printData = (data)=>{
 }
 
 //eventListeners
-document.addEventListener('DOMContentLoaded ', fontAnimation);
-document.addEventListener('scroll', navbarScroll)
+document.addEventListener('DOMContentLoaded ', fontAnimation());
+document.addEventListener('scroll', navbarScroll);
 
