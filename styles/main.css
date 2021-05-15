@@ -432,7 +432,6 @@ p {
   }
   .portfolio__button:hover span {
     color: var(--color-white);
-    all: unset;
   }
   .portfolio__button:before {
     all: unset;
