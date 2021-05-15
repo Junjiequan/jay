@@ -249,6 +249,7 @@ p {
   height: 4rem;
   width: 100%;
   box-shadow: 0 3px 5px rgba(8, 8, 8, 0.4);
+  transition: top 0.5s ease-in-out;
 }
 .nav__wrapper {
   margin: 0 2rem;
@@ -309,6 +310,7 @@ p {
 }
 
 .portfolio {
+  width: 100%;
   margin-top: 4rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
@@ -403,21 +405,8 @@ p {
   font-size: 1.25rem;
 }
 @media screen and (max-width: 600px) {
-  .portfolio {
-    margin-top: 1rem;
-  }
   .portfolio__image {
     height: 15rem;
-  }
-  .portfolio__image::after {
-    z-index: 1;
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    height: 3rem;
-    width: 100%;
-    background: rgba(207, 207, 207, 0.4);
   }
   .portfolio__image--hover {
     z-index: 2;
@@ -427,21 +416,28 @@ p {
     align-items: flex-end;
     justify-content: space-between;
     flex-direction: row;
-    padding: 0 1rem;
   }
   .portfolio__button {
-    background: linear-gradient(to right, #8d2ce2, #4b00e0);
+    background: rgba(68, 65, 68, 0.7);
     letter-spacing: 0;
-    min-width: 8rem;
-    max-width: 8rem;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
     font-size: 0.625rem;
     padding: 0.5rem 0.2rem;
+    box-shadow: none;
   }
   .portfolio__button span {
     color: var(--color-white);
   }
+  .portfolio__button:hover span {
+    color: var(--color-white);
+  }
   .portfolio__button:before {
     all: unset;
+  }
+  .portfolio__button:first-child {
+    border-right: 1px solid var(--color-gray);
   }
 }
 
@@ -832,6 +828,9 @@ p {
   transform: translateX(1rem);
 }
 @media screen and (max-width: 600px) {
+  .projects__wrapper {
+    margin: 0 1rem;
+  }
   .projects__title:after {
     content: "";
     position: absolute;

@@ -13,6 +13,7 @@
     height:4rem;
     width:100%;
     box-shadow:0 3px 5px rgba($color: hsl(0, 0%, 3%), $alpha: 0.4);
+    transition: top .5s ease-in-out;
     &__wrapper{
         margin:0 2rem;
         height:100%;

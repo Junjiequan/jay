@@ -1,5 +1,5 @@
 import {fontAnimation} from './font.js';
-
+import {navbarScroll} from './navbar.js';
 
 //selectors
 const itemContainer = document.querySelector('[data-js="portfolio"]')
@@ -45,4 +45,6 @@ const printData = (data)=>{
 }
 
 //eventListeners
-document.addEventListener('DOMContentLoaded ', fontAnimation());
+document.addEventListener('DOMContentLoaded ', fontAnimation);
+document.addEventListener('scroll', navbarScroll)
+
