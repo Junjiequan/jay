@@ -25,7 +25,7 @@
   font-weight: 100;
 }
 
-h1, p {
+h1, p, .popup-message p {
   font-weight: 200;
 }
 
@@ -37,7 +37,7 @@ h1, p {
   font-weight: 400;
 }
 
-h2, h3, .portfolio__skill {
+h2, h3, .popup-message span, .portfolio__skill {
   font-weight: 500;
 }
 
@@ -112,6 +112,7 @@ h2, h3, .portfolio__skill {
   font-size: 1.7rem;
 }
 .email__wrapper {
+  overflow: hidden;
   transition: all 0.3s ease;
   opacity: 0;
   display: none;
@@ -276,6 +277,7 @@ h2, h3, .portfolio__skill {
     align-items: flex-end;
     justify-content: space-between;
     flex-direction: row;
+    background: transparent;
   }
   .portfolio__button {
     background: rgba(68, 65, 68, 0.7);
@@ -301,10 +303,34 @@ h2, h3, .portfolio__skill {
   }
 }
 
-.error {
-  border-radius: 2px;
-  border: 2px solid red;
-  color: red;
+.popup-message {
+  border-radius: 5px;
+  position: absolute;
+  background: var(--color-purple);
+  color: var(--color-white);
+  max-width: 22rem;
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  top: -10rem;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+  transition: top 0.3s ease-in-out;
+}
+.popup-message p {
+  font-size: 0.875rem;
+  line-height: 1.2rem;
+  margin-top: 0.5rem;
+}
+@media screen and (max-width: 600px) {
+  .popup-message {
+    width: 90%;
+  }
 }
 
 /* Box sizing rules */

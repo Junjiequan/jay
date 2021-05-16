@@ -1,0 +1,32 @@
+@use '../1-utilities/' as *;
+
+.popup-message{
+    border-radius:5px;
+    position:absolute;
+    background:getColor(purple);
+    color:getColor(white);
+    max-width:22rem;
+    min-height:6rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
+    margin:0 auto;
+    top:-10rem;
+    left:0;right:0;
+    padding:1rem;
+    text-align:center;
+    transition:top .3s ease-in-out;
+    p{
+        font-size:rem(1.4);
+        @extend %b-200;
+        line-height:1.2rem;
+        margin-top:.5rem;
+    }
+    span{
+        @extend %b-500;
+    }
+    @media screen and (max-width:600px){
+        width:90%;
+    }
+}
