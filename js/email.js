@@ -33,14 +33,24 @@ export const openEmail = ()=>{
     })
 }
 export const sendEmail = document.querySelector('form').addEventListener('submit', (e)=>{
+    
     e.preventDefault();
     const form = e.target
+    popSuccess.style.top = "2rem";
     emailjs.sendForm('Gmail', 'FromPortfolio', form , 'user_TV8FyBqlJdT9MLqlMZjuh')
         .then(result => {
-            console.log('SUCCESS!', result.status, result.text)
-            popSuccess.style.top = "2rem";
+            console.log('SUCCESS!', result.text)
+            popSuccess.innerHTML = `
+            <span> Message received. 👏</span>
+            <p>I'll get back to you as soon as possible. 😉 </p>
+            `
             setTimeout(()=>{
                 popSuccess.style.top = "-10rem";
+                setTimeout(()=>{
+                    popSuccess.innerHTML = `
+                    <span> Message sending. 📣</span>
+                    `
+                },1000)
             },3000)
         }), error => {
             console.log('FAILED...', error)
