@@ -10,12 +10,12 @@
     margin:0 auto;
     background:rgba($color: hsl(0, 0%, 3%), $alpha: 0.8);
     backdrop-filter: blur(2px);
-    height:4rem;
+    height:5rem;
     width:100%;
     box-shadow:0 3px 5px rgba($color: hsl(0, 0%, 3%), $alpha: 0.4);
     transition: top .5s ease-in-out;
     &__wrapper{
-        margin:0 2rem;
+        margin:0 1rem;
         height:100%;
         max-width:1100px;
         width:100%;
@@ -39,6 +39,12 @@
         height:100%;
         display:flex;
         font-size:rem(1.4);
+    }
+    &__mobile--toggle{
+        display:none;
+    }
+    &__mobile{
+        display:none;
     }
     &__link{
         cursor:pointer;
@@ -73,6 +79,68 @@
         &:hover a::after,
         &:focus-within a::after{
             height:4px;
+        }
+    }
+    @media screen and (max-width:600px){
+        background:rgba($color: hsl(0, 0%, 3%), $alpha: 1);
+        z-index:999;
+        &__logo{
+            width:3rem;
+            position:absolute;
+            justify-content: center;
+            margin:0 auto;
+            right:0;left:0;
+            &:hover{
+                color:getColor(white);
+            }
+        }
+        &__menu{
+            display:none;
+        }
+        &__mobile--toggle{
+            width:100%;
+            display:flex;
+            justify-content:flex-end;
+            svg{
+                pointer-events:none;
+            }
+        }
+        &__mobile{
+            position:absolute;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            width:100%;
+            min-height:100vh;
+            top:5rem;
+            right:-100%;
+            background:rgba($color: #000000, $alpha: 0.9);
+            transition: right .5s ease-in-out;
+            a{
+                margin:1rem 0;
+                color:getColor(white);
+                &:first-child{
+                    margin-top:7rem;
+                }
+                &:nth-child(2){
+                    margin-bottom:5rem;
+                }
+            }
+            span{
+                position:relative;
+                font-size:rem(6);
+                padding-top:4.5rem;
+                &::before{
+                    position:absolute;
+                    content:'';
+                    width:100%;
+                    height:2px;
+                    display:block;
+                    margin:0 auto;
+                    top:0;left:0;right:0;
+                    background:getColor(white);
+                }
+            }
         }
     }
 }

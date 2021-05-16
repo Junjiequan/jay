@@ -1,0 +1,22 @@
+@use '../1-utilities/' as *;
+
+.footer{
+    height:5rem;
+    background:getColor(black);
+    &__wrapper{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:100%;
+    }
+    &__text{
+        color:getColor(white);
+        font-size:rem(1.2);
+        letter-spacing: .05rem;
+        span{
+            padding-right:1rem;
+            font-size:rem(2);
+        }
+    }
+}

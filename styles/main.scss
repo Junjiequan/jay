@@ -9,6 +9,7 @@
 @use './2-components/email';
 @use './2-components/portfolio';
 @use './2-components/popup';
+@use './2-components/hamburger';
 
 //Initial settings
 @use './3-base/reset';
@@ -19,3 +20,4 @@
 @use './4-layout/hero';
 @use './4-layout/about';
 @use './4-layout/projects';
+@use './4-layout/footer';
