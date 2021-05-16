@@ -82,14 +82,9 @@
             display:block;
             transition:all .2s linear;
             margin-right:1.5rem;
-            background: -webkit-gradient(linear, left top, left bottom, from(hsl(0, 0%, 42%)), to(hsl(271, 82%, 31%)));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size:50% 400%;
+            color:getColor(text);
             &:hover{
-                background-size:100% 120%;
-                filter:brightness(1.4);
+                filter:brightness(.5);
             }
         }
     }

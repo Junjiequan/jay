@@ -942,15 +942,10 @@ p {
   display: block;
   transition: all 0.2s linear;
   margin-right: 1.5rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#6b6b6b), to(#510e90));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 50% 400%;
+  color: var(--color-text);
 }
 .about__techStack--hover:hover {
-  background-size: 100% 120%;
-  filter: brightness(1.4);
+  filter: brightness(0.5);
 }
 @media screen and (max-width: 881px) {
   .about {
