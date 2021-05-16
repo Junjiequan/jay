@@ -41,6 +41,22 @@ a{
   text-decoration:none;
 }
 
+
+// .sr-only{
+//   position: absolute;
+//   margin: -1px 0 0 -1px;
+//   padding: 0;
+//   display: block;
+//   width: 1px;
+//   height: 1px;
+//   font-size: 1px;
+//   line-height: 1px;
+//   overflow: hidden;
+//   clip: rect(0,0,0,0);
+//   border: 0;
+//   outline: 0;
+// }
+
 /* reset button */
 button{
   all:unset;
@@ -56,13 +72,13 @@ button{
 
 
 /* remove input autofill color settings*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    box-shadow: 0 0 0 30px color(input) inset !important;
-    -webkit-text-fill-color: color(font) !important;
-}
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover, 
+// input:-webkit-autofill:focus, 
+// input:-webkit-autofill:active{
+//     box-shadow: 0 0 0 30px color(input) inset !important;
+//     -webkit-text-fill-color: color(font) !important;
+// }
 
 /* Set core root defaults */
 html,
@@ -76,6 +92,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background: hsl(0, 0%, 88%);
+  overflow-x: hidden;
 }
 
 /* Make images easier to work with */

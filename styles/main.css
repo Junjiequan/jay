@@ -37,11 +37,11 @@ h1, p {
   font-weight: 400;
 }
 
-.portfolio__skill, h2, h3 {
+h2, h3, .portfolio__skill {
   font-weight: 500;
 }
 
-.hero__visual span, .hero__icon--weChat::before {
+.hero__visual span, .hero__icon--weChat::before, .email__submit {
   font-weight: 600;
 }
 
@@ -78,6 +78,233 @@ h1, p {
 }
 .projects__button:focus-within:before, .hero__button:focus-within:before, .portfolio__button:focus-within:before {
   width: 100%;
+}
+
+.email {
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+}
+.email--backDrop {
+  width: 100%;
+  height: 100%;
+}
+.email__button {
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.email__button i {
+  pointer-events: none;
+  color: var(--color-purple);
+  font-size: 1.7rem;
+}
+.email__wrapper {
+  transition: all 0.3s ease;
+  opacity: 0;
+  display: none;
+  width: 30rem;
+  max-height: 40rem;
+  background: var(--color-white);
+  padding: 1rem;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 6rem;
+  right: 1rem;
+  box-shadow: 0 0 10px rgba(94, 94, 94, 0.4);
+}
+.email__input {
+  margin: 0.5rem 0;
+  width: 100%;
+  font-size: 0.75rem;
+  min-height: 1.7rem;
+  padding-left: 0.5rem;
+}
+.email__input:focus-visible {
+  outline: none;
+}
+.email__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  width: 5rem;
+  height: 2rem;
+  cursor: pointer;
+  border: none;
+  font-size: 0.75rem;
+  background: var(--color-purple);
+  color: var(--color-white);
+  letter-spacing: 0.05rem;
+}
+@media screen and (max-width: 600px) {
+  .email__wrapper {
+    width: 90%;
+    bottom: 5.5rem;
+    left: 1rem;
+    right: 0;
+  }
+  .email__button {
+    bottom: 1rem;
+    right: 0.5rem;
+  }
+}
+
+.portfolio {
+  width: 100%;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-rows: auto;
+  grid-column-gap: 4rem;
+  grid-row-gap: 2rem;
+}
+.portfolio__item {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  border-radius: 5px;
+}
+.portfolio__image {
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  height: 20rem;
+  width: 100%;
+  overflow: hidden;
+}
+.portfolio__image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+}
+.portfolio__image:hover > .portfolio__image--hover {
+  opacity: 1;
+}
+.portfolio__image--hover {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+.portfolio__image--hover:focus-within {
+  opacity: 1;
+}
+.portfolio__button {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin: 0.5rem 0;
+  background: var(--color-white);
+  box-shadow: 0 2px 7px rgba(53, 53, 53, 0.3);
+}
+.portfolio__button span {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  color: black;
+  transition: color 0.3s ease;
+}
+.portfolio__button:hover > span, .portfolio__button:focus-within > span {
+  color: var(--color-white);
+}
+.portfolio__skills {
+  display: flex;
+  margin-top: 0.5rem;
+}
+.portfolio__skill {
+  display: flex;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+}
+.portfolio__skill--html {
+  color: #2d9595;
+}
+.portfolio__skill--css {
+  color: #244b9e;
+}
+.portfolio__skill--js {
+  color: #aa1313;
+}
+.portfolio__skill--api {
+  color: #279b27;
+}
+.portfolio__title {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 600px) {
+  .portfolio {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+  .portfolio__image {
+    height: 15rem;
+  }
+  .portfolio__image--hover {
+    max-width: 100%;
+    z-index: 2;
+    opacity: 1;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .portfolio__button {
+    background: rgba(68, 65, 68, 0.7);
+    letter-spacing: 0;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    font-size: 0.625rem;
+    padding: 0.5rem 0.2rem;
+    box-shadow: none;
+  }
+  .portfolio__button span {
+    color: var(--color-white);
+  }
+  .portfolio__button:hover span {
+    color: var(--color-white);
+  }
+  .portfolio__button:before {
+    all: unset;
+  }
+  .portfolio__button:first-child {
+    border-right: 1px solid var(--color-gray);
+  }
+}
+
+.error {
+  border-radius: 2px;
+  border: 2px solid red;
+  color: red;
 }
 
 /* Box sizing rules */
@@ -136,14 +363,6 @@ button {
 }
 
 /* remove input autofill color settings*/
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  box-shadow: 0 0 0 30px color(input) inset !important;
-  -webkit-text-fill-color: color(font) !important;
-}
-
 /* Set core root defaults */
 html,
 html:focus-within {
@@ -156,6 +375,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background: #e0e0e0;
+  overflow-x: hidden;
 }
 
 /* Make images easier to work with */
@@ -311,141 +531,6 @@ p {
 }
 .nav__link:hover a::after, .nav__link:focus-within a::after {
   height: 4px;
-}
-
-.portfolio {
-  width: 100%;
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  grid-template-rows: auto;
-  grid-column-gap: 4rem;
-  grid-row-gap: 2rem;
-}
-.portfolio__item {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  border-radius: 5px;
-}
-.portfolio__image {
-  position: relative;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  height: 20rem;
-  width: 100%;
-  overflow: hidden;
-}
-.portfolio__image img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center top;
-     object-position: center top;
-}
-.portfolio__image:hover > .portfolio__image--hover {
-  opacity: 1;
-}
-.portfolio__image--hover {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-  transition: all 0.4s ease;
-}
-.portfolio__image--hover:focus-within {
-  opacity: 1;
-}
-.portfolio__button {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  margin: 0.5rem 0;
-  background: var(--color-white);
-  box-shadow: 0 2px 7px rgba(53, 53, 53, 0.3);
-}
-.portfolio__button span {
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  display: block;
-  position: relative;
-  color: black;
-  transition: color 0.3s ease;
-}
-.portfolio__button:hover > span, .portfolio__button:focus-within > span {
-  color: var(--color-white);
-}
-.portfolio__skills {
-  display: flex;
-  margin-top: 0.5rem;
-}
-.portfolio__skill {
-  display: flex;
-  margin-right: 0.5rem;
-  text-transform: uppercase;
-}
-.portfolio__skill--html {
-  color: #2d9595;
-}
-.portfolio__skill--css {
-  color: #244b9e;
-}
-.portfolio__skill--js {
-  color: #aa1313;
-}
-.portfolio__skill--api {
-  color: #279b27;
-}
-.portfolio__title {
-  font-size: 1.25rem;
-}
-@media screen and (max-width: 600px) {
-  .portfolio {
-    margin-top: 2rem;
-  }
-  .portfolio__image {
-    height: 15rem;
-  }
-  .portfolio__image--hover {
-    z-index: 2;
-    opacity: 1;
-    -webkit-backdrop-filter: none;
-            backdrop-filter: none;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  .portfolio__button {
-    background: rgba(68, 65, 68, 0.7);
-    letter-spacing: 0;
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
-    font-size: 0.625rem;
-    padding: 0.5rem 0.2rem;
-    box-shadow: none;
-  }
-  .portfolio__button span {
-    color: var(--color-white);
-  }
-  .portfolio__button:hover span {
-    color: var(--color-white);
-  }
-  .portfolio__button:before {
-    all: unset;
-  }
-  .portfolio__button:first-child {
-    border-right: 1px solid var(--color-gray);
-  }
 }
 
 .hero {
@@ -627,7 +712,7 @@ p {
   position: relative;
 }
 .about__wrapper {
-  margin: 0 2rem;
+  margin: 0 1rem;
   max-width: 1100px;
   width: 100%;
   display: flex;
@@ -646,7 +731,7 @@ p {
   margin-top: 1rem;
   cursor: pointer;
   border-radius: 5px;
-  flex: 0 0 25rem;
+  flex: 0 1 25rem;
   overflow: hidden;
 }
 .about__image img {
@@ -659,7 +744,6 @@ p {
 }
 .about__info {
   flex: 1;
-  min-width: 20rem;
   margin-top: 1rem;
   margin-left: 5rem;
   padding-left: 5rem;
@@ -717,7 +801,7 @@ p {
 }
 @media screen and (max-width: 881px) {
   .about {
-    margin: 2rem auto;
+    margin: 2rem 0;
   }
   .about__desc {
     display: flex;
@@ -732,18 +816,19 @@ p {
     font-size: 0.875rem;
   }
   .about__image {
-    margin: 0 1rem 1rem;
-    flex: auto;
+    margin-bottom: 1rem;
     max-height: 15rem;
+    flex: auto;
   }
   .about__image img {
+    width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
   .about__info {
     flex: auto;
     padding: 0;
-    margin: 1rem;
+    margin: 1rem 0;
     text-align: center;
   }
   .about__info::before {
@@ -767,9 +852,9 @@ p {
   display: flex;
   justify-content: center;
   position: relative;
+  width: 100%;
 }
 .projects__wrapper {
-  margin: 0 2rem;
   max-width: 1100px;
   width: 100%;
   display: flex;
@@ -833,15 +918,12 @@ p {
   width: 10px;
   align-items: center;
   margin-left: 0.7rem;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.4s ease-in;
 }
 .projects__button:hover i, .projects__button:focus-within i {
   transform: translateX(1rem);
 }
 @media screen and (max-width: 600px) {
-  .projects__wrapper {
-    margin: 0 1rem;
-  }
   .projects__title {
     justify-content: center;
     text-align: center;

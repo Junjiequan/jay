@@ -6,6 +6,9 @@
 
 //self-explanatory
 @use './2-components/buttons';
+@use './2-components/email';
+@use './2-components/portfolio';
+@use './2-components/error';
 
 //Initial settings
 @use './3-base/reset';

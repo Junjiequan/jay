@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
     <script type="module" src="./js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <title>Jay Quan | portfolio</title>
 </head>
 <body class="light">
@@ -49,7 +54,7 @@
                         <p class="about__desc--text" >
                             A self taught front-end developer who loves coding & design.<br>
                             My front-end learning journey started since January 2021.<br>
-                            I love to create things my own from scratch and I also love to learn from other good developers.<br>
+                            I love to create things my own from scratch and also love to learn from other good developers.<br>
                             I always strive to expand my knowledge of accessibility and looking for improvements for better user experiences.<br>
                         </p>
                         <h3>Educational background</h3>
@@ -80,7 +85,6 @@
             <h2 class="projects__title"><span class="projects__title--highlight">Project</span> portfolio<span class="projects__title--small">Frontend mentor challenges</span>
             </h2>
             <div class="portfolio" data-js="portfolio">
-                
                 <!-- <div class="portfolio__item" >
                     <div class="portfolio__image">
                         <img src="./images/project-todo.png" alt="project-todo-img">
@@ -102,5 +106,29 @@
             <a href="https://github.com/a331998513/projects" class="projects__button" target="_blank"><span>More</span> <i class="fas fa-chevron-right"></i></a>
         </div>
     </section>
+    <section class="email" data-js="blur-trigger">
+        <button class="email__button" data-js="email-box-trigger" aria-label="open email sending box"><i class="fas fa-envelope"></i></button>
+        <!-- <i class="fas fa-angle-down"></i> -->
+        <form class="email__wrapper" data-js="email-box"> 
+            <div class="email__sender">
+                <input type="text" class="email__input" placeholder="Name" aria-label="name of sender" name="name" />
+            </div>
+            <div class="email__address"> 
+                <input type="text" class="email__input " placeholder="Email Address" aria-label="email address of sender" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"/>
+            </div>
+            <div class="email__subject">
+                <input type="text" class="email__input" placeholder="Subject" aria-label="subject of the email" name="subject" required/>
+            </div>
+            <div class="email__message">
+                <textarea  class="email__input" style="resize:none"rows="5" placeholder="Send short message" aria-label="message to be sent" name="message" required></textarea>
+            </div>
+            <div class="email__submit">
+                <input type="submit" class="email__submit" value="Submit" aria-label="send message" name="submit" />
+            </div>
+        </form>
+    </section>
+    <footer>
+        
+    </footer>
 </body>
 </html>

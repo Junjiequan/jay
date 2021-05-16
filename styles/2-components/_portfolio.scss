@@ -44,6 +44,7 @@
         height:100%;
         opacity:0;
         backdrop-filter:blur(2px);
+        background:rgba($color: #000000, $alpha: 0.2); //fallback
         transition:all .4s ease;
         &:focus-within{
             opacity:1;
@@ -91,11 +92,14 @@
         @extend %b-400;
     }
     @media screen and (max-width:600px){
+        grid-template-columns:repeat(auto-fill, minmax(15rem,1fr));
         margin-top:2rem;
+        padding:0 1rem;
         &__image{
             height:15rem;
         }
         &__image--hover{
+            max-width:100%;
             z-index:2;
             opacity:1;
             backdrop-filter: none;
