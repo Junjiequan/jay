@@ -9,6 +9,7 @@
     position:relative;
     width:100%;
     &__wrapper{
+        margin:0 1rem;
         max-width:1100px;
         width:100%;
         display:flex;
@@ -80,6 +81,9 @@
         }
     }
     @media screen and (max-width:600px){
+        &__wrapper{
+            margin:0;
+        }
         &__title{
             justify-content:center;
             text-align:center;

@@ -1008,6 +1008,7 @@ p {
   width: 100%;
 }
 .projects__wrapper {
+  margin: 0 1rem;
   max-width: 1100px;
   width: 100%;
   display: flex;
@@ -1077,6 +1078,9 @@ p {
   transform: translateX(1rem);
 }
 @media screen and (max-width: 600px) {
+  .projects__wrapper {
+    margin: 0;
+  }
   .projects__title {
     justify-content: center;
     text-align: center;
