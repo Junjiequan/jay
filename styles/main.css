@@ -993,6 +993,9 @@ p {
     background: var(--color-lightGray);
     position: absolute;
   }
+  .about__techStack--hover:hover {
+    filter: none;
+  }
 }
 
 .projects {
