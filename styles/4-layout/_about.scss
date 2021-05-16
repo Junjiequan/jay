@@ -84,7 +84,7 @@
             margin-right:1.5rem;
             color:getColor(text);
             &:hover{
-                filter:brightness(.5);
+                filter:brightness(0.5);
             }
         }
     }
@@ -126,6 +126,13 @@
                 margin:0 auto;
                 background:getColor(lightGray);
                 position:absolute;
+            }
+        }
+        &__techStack{
+            &--hover{
+                &:hover{
+                    filter:none;
+                }
             }
         }
     }
