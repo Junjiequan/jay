@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "image": "./images/project-todo-image.png",
+        "image": "./images/project-todo-image.jpg",
         "alt":"project-todo-image",
         "skill": ["html", "css", "js", "api"],
         "live": "https://a331998513.github.io/projects/todo-app-main/",
@@ -10,7 +10,7 @@
     },
     {
         "id": "2",
-        "image": "./images/project-crowdFunding-image.png",
+        "image": "./images/project-crowdFunding-image.jpg",
         "alt":"project-crowdFunding-image",
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/crowdfunding-product-page-main",
@@ -19,7 +19,7 @@
     },
     {
         "id": "3",
-        "image": "./images/project-easybank-image.png",
+        "image": "./images/project-easybank-image.jpg",
         "alt":"project-easybank-image",
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/easybank-landing-page-master/",
@@ -28,7 +28,7 @@
     },
     {
         "id": "4",
-        "image": "./images/project-urlShorten-image.png",
+        "image": "./images/project-urlShorten-image.jpg",
         "alt":"project-urlShorten-image",
         "skill": ["html", "css","js", "api"],
         "live": "https://a331998513.github.io/projects/url-shortening-api-master/",
@@ -37,7 +37,7 @@
     },
     {
         "id": "5",
-        "image": "./images/project-ipTracker-image.png",
+        "image": "./images/project-ipTracker-image.jpg",
         "alt":"project-ipTracker-image",
         "skill": ["html", "css", "js", "api"],
         "live": "https://a331998513.github.io/projects/ip-address-tracker-master/",
@@ -46,7 +46,7 @@
     },
     {
         "id": "6",
-        "image": "./images/project-jobListing-image.png",
+        "image": "./images/project-jobListing-image.jpg",
         "alt":"project-jobListing-image",
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/static-job-listings-master/",
@@ -55,7 +55,7 @@
     },
     {
         "id": "7",
-        "image": "./images/project-room-image.png",
+        "image": "./images/project-room-image.jpg",
         "alt":"project-room-image",
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/room-homepage-master/",
@@ -64,7 +64,7 @@
     },
     {
         "id": "8",
-        "image": "./images/project-landingPage-image.png",
+        "image": "./images/project-landingPage-image.jpg",
         "alt":"project-landingPage-image",
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/clipboard-landing-page-master/",
