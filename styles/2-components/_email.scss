@@ -26,6 +26,7 @@
             pointer-events: none;
             color:getColor(purple);
             font-size:1.7rem;
+            transition:transform .2s ease-in;
         }
     }
     &__wrapper{
@@ -46,7 +47,7 @@
         margin:.5rem 0;
         width:100%;
         font-size:rem(1.2);
-        min-height:1.7rem;
+        min-height:2.4rem;
         padding-left:.5rem;
         &:focus-visible{
             outline:none;

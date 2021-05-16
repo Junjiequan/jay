@@ -1,33 +1,38 @@
 import 'https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js';
 
 const trigger = document.querySelector('[data-js="email-box-trigger"]')
+const triggerBtn = document.querySelector('[data-js="email-box-btn-icon"]')
 const emailBox = document.querySelector('[data-js="email-box"]')
 const bgTrigger = document.querySelector('[data-js="blur-trigger"]')
 const popSuccess = document.querySelector('[data-js="sending-success"]')
 const navContact = document.querySelector('[data-js="contact"]')
+
+
+const btnIconAnim = (icon) =>{
+    triggerBtn.style.transform = "scale(0)"
+    setTimeout(()=>{
+        triggerBtn.className = `${icon}` 
+        triggerBtn.style.transform = "scale(1)"
+    }, 180)
+}
 const open = ()=>{
-    // document.body.style.overflow = "hidden"
     bgTrigger.classList.add('email--backDrop')
     document.querySelector('.email--backDrop').style.backdropFilter = "blur(2px)"
-    //backdropFilter fallback
-    document.querySelector('.email--backDrop').style.background = "rgba(0,0,0,0.3)"
+    document.querySelector('.email--backDrop').style.background = "rgba(0,0,0,0.3)"  //backdropFilter fallback
     emailBox.style.display = "block";
-    setTimeout(()=>{
-        trigger.innerHTML = `<i class="fas fa-angle-down"></i>`
-        emailBox.style.opacity= "1";
-    },50)
+    setTimeout(()=> emailBox.style.opacity= "1" , 50)
+    btnIconAnim('fas fa-angle-down')
+
 }
 const close = ()=>{
-    // document.body.style.overflow = "auto"
-    trigger.innerHTML = `<i class="far fa-comment-dots"></i>`
     document.querySelector('.email--backDrop').style.backdropFilter = ""
-    //backdropFilter fallback
-    document.querySelector('.email--backDrop').style.background = ""
+    document.querySelector('.email--backDrop').style.background = ""    //backdropFilter fallback
     emailBox.style.opacity = "0";
     setTimeout(()=>{
         bgTrigger.classList.remove('email--backDrop')
         emailBox.style.display = "none";
     },400)
+    btnIconAnim('far fa-comment-dots')
 }
 
 export const openEmail = ()=>{

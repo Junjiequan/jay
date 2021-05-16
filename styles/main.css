@@ -110,6 +110,7 @@ h2, h3, .popup-message span, .portfolio__skill {
   pointer-events: none;
   color: var(--color-purple);
   font-size: 1.7rem;
+  transition: transform 0.2s ease-in;
 }
 .email__wrapper {
   overflow: hidden;
@@ -130,7 +131,7 @@ h2, h3, .popup-message span, .portfolio__skill {
   margin: 0.5rem 0;
   width: 100%;
   font-size: 0.75rem;
-  min-height: 1.7rem;
+  min-height: 2.4rem;
   padding-left: 0.5rem;
 }
 .email__input:focus-visible {
