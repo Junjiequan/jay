@@ -137,18 +137,31 @@ h2, h3, .popup-message span, .portfolio__skill {
   outline: none;
 }
 .email__submit {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 3px;
   width: 5rem;
   height: 2rem;
   cursor: pointer;
-  border: none;
+  border: 0;
   font-size: 0.75rem;
   background: var(--color-purple);
   color: var(--color-white);
   letter-spacing: 0.05rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.email__submit:focus:not(:focus-visible) {
+  outline: 0;
+}
+.email__submit:focus-visible {
+  outline-offset: 2px;
+}
+.email__submit:hover {
+  box-shadow: inset 0 0px 100px rgba(255, 255, 255, 0.4);
+}
+.email__submit:active {
+  transform: translateY(2px);
 }
 @media screen and (max-width: 600px) {
   .email__wrapper {
