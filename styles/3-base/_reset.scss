@@ -41,21 +41,21 @@ a{
   text-decoration:none;
 }
 
-
-// .sr-only{
-//   position: absolute;
-//   margin: -1px 0 0 -1px;
-//   padding: 0;
-//   display: block;
-//   width: 1px;
-//   height: 1px;
-//   font-size: 1px;
-//   line-height: 1px;
-//   overflow: hidden;
-//   clip: rect(0,0,0,0);
-//   border: 0;
-//   outline: 0;
-// }
+/* polite */
+.sr-only{
+  position: absolute !important; 
+  margin: -1px 0 0 -1px !important;
+  padding: 0 !important;
+  display: block !important;
+  width: 1px !important;
+  height: 1px !important;
+  font-size: 1px !important;
+  line-height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  border: 0 !important;
+  outline: 0 !important;
+}
 
 /* reset button */
 button{
