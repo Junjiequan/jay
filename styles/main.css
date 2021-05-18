@@ -752,7 +752,7 @@ p {
 @media screen and (max-width: 600px) {
   .nav {
     background: #080808;
-    z-index: 999;
+    z-index: 98;
   }
   .nav__logo {
     width: 3rem;
