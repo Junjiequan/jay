@@ -191,7 +191,7 @@ h2, h3, .popup-message span, .portfolio__skill {
 .email__address button::after {
   pointer-events: none;
   position: absolute;
-  content: "Click to leave email";
+  content: "Click to leave email (optional)";
   font-size: 0.6875rem;
   top: 0.3rem;
   margin-left: 0.7rem;
