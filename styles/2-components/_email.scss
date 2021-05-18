@@ -7,6 +7,7 @@
     position:fixed;
     bottom:0;right:0;
     transition:all .5s ease-in-out;
+    height:100%;
     &--backDrop{
         width:100%;
         height:100%;
@@ -30,44 +31,92 @@
         }
     }
     &__wrapper{
+        z-index:2;
         overflow: hidden;
         transition:all .3s ease;
         opacity:0;
         display:none;
-        width:30rem;
-        max-height:40rem;
+        width:24rem;
+        max-height:30rem;
         background:getColor(white);
         padding:1rem;
         border-radius:5px;
         position:absolute;
         bottom:6rem;right:1rem;
-        box-shadow:0 0 10px rgba($color: #5e5e5e, $alpha: 0.4)
+        box-shadow:0 0 10px rgba($color: #5e5e5e, $alpha: 0.4);        
     }
-    &__input{
-        margin:.5rem 0;
+    &__inner-title{
+        margin: -1rem;
+        background:getColor(purpleToblue);
+        box-shadow:0 1px 5px getColor(purple);
+        color:getColor(white);
+        padding:1rem;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:5rem;
+        margin-top:-1rem;
+        margin-bottom:1rem;
+    }
+    &__address{
+        display:flex;
+        flex-direction:column;
+        position:relative;
+        button{
+            width:4.7rem;
+            i{
+                transition:transform .3s ease-in-out;
+                margin-right:.5rem;
+            }
+            &::after{
+                pointer-events:none;
+                position:absolute;
+                content:'Click to leave email';
+                font-size:rem(1.1);
+                top:.3rem;
+                margin-left:.7rem;
+                color:getColor(text);
+            }
+        }
+    }
+    input[type=text],
+    textarea{
+        border:1px solid getColor(gray);
+        border-radius:5px;
         width:100%;
         font-size:rem(1.2);
-        min-height:2.4rem;
         padding-left:.5rem;
         &:focus-visible{
             outline:none;
         }
     }
+    &__input-email{
+        margin:0;
+        opacity:0;
+        height:0;
+        transition: all 0.3s ease-in-out;
+    }
+    &__input{
+        margin:.5rem 0;
+        min-height:2.4rem;
+        
+    }
     &__submit{
         display:block;
         align-items:center;
         justify-content: center;
-        border-radius:3px;
+        border-radius:5px;
         width:5rem;
         height:2rem;
         cursor:pointer;
         border:0;
         font-size:rem(1.2);
-        background: getColor(purple);
+        background: getColor(title);
         color:getColor(white);
         letter-spacing:.05rem;
         @extend %b-600;
-        transition: box-shadow .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+        box-shadow:0 2px 0 rgba($color: hsl(258, 100%, 59%), $alpha: 1.0);
         &:focus:not(:focus-visible){
             outline:0;
         }
@@ -75,10 +124,11 @@
             outline-offset: 2px;
         }
         &:hover{
-            box-shadow:inset 0 0px 100px rgba($color: #ffffff, $alpha: 0.4);
+            filter:opacity(0.7);
         }
         &:active{
             transform:translateY(2px);
+            box-shadow:inset 0 0px 100px rgba($color: #272727, $alpha: 0);
         }
     }
     @media screen and (max-width:600px){

@@ -6,7 +6,9 @@ const emailBox = document.querySelector('[data-js="email-box"]')
 const bgTrigger = document.querySelector('[data-js="blur-trigger"]')
 const popSuccess = document.querySelector('[data-js="sending-success"]')
 const navContact = document.querySelector('[data-js="contact"]')
-
+const dropdown = document.querySelector('[data-js="dropdown-email-input"]')
+const dropdownIcon = document.querySelector('[data-js="dropdown-icon"]')
+const dropdownInput = document.querySelector('[data-js="dropdown-input"]')
 
 const btnIconAnim = (icon) =>{
     triggerBtn.style.transform = "scale(0)"
@@ -31,11 +33,16 @@ const close = ()=>{
     setTimeout(()=>{
         bgTrigger.classList.remove('email--backDrop')
         emailBox.style.display = "none";
-    },400)
+    },400);
+    dropdownIcon.style.transform = "";
+    dropdownInput.style.height = "0"
+    dropdownInput.style.margin = "0"
+    dropdownInput.style.opacity = "0"
     btnIconAnim('far fa-comment-dots')
 }
 
 export const openEmail = ()=>{
+    
     trigger.addEventListener('click', ()=>{
         emailBox.style.display !== "block" ? open() : close()
     });
@@ -50,26 +57,40 @@ export const openEmail = ()=>{
             && e.target !== navContact) 
         close();
     })
+    dropdown.addEventListener('click', ()=>{
+        if(dropdownIcon.style.transform === ""){
+            dropdownIcon.style.transform = "rotate(90deg)" 
+            dropdownInput.style.opacity = "1"
+            dropdownInput.style.margin = ".5rem 0"
+            dropdownInput.style.height = "2.4rem"
+        } else {
+            dropdownIcon.style.transform = "";
+            dropdownInput.style.height = "0"
+            dropdownInput.style.margin = "0"
+            dropdownInput.style.opacity = "0"
+        }
+    })
 }
 
 export const sendEmail = document.querySelector('form').addEventListener('submit', (e)=>{
     e.preventDefault();
     const form = e.target
-    popSuccess.style.top = "2rem";
+    popSuccess.style.opacity="1"
+    popSuccess.style.bottom = "9rem";
     emailjs.sendForm('Gmail', 'FromPortfolio', form , 'user_TV8FyBqlJdT9MLqlMZjuh')
         .then(result => {
             console.log('SUCCESS!', result.text)
             popSuccess.innerHTML = `
-            <span> Message received. 👏</span>
-            <p>I'll get back to you as soon as possible. 😉 </p>
+            <p> <span>Message Received <i class="fas fa-check-square" style="margin-left:.5rem;"></i></span> </p>
             `
             setTimeout(()=>{
-                popSuccess.style.top = "-10rem";
+                popSuccess.style.opacity="0"
+                popSuccess.style.bottom = "-10rem";
                 setTimeout(()=>{
                     popSuccess.innerHTML = `
-                    <span> Message sending. 📣</span>
+                    <p>Message sending</p> <div class="lds-circle"><div></div></div> 
                     `
-                },1000)
+                },2000)
             },3000)
         }), error => {
             console.log('FAILED...', error)
