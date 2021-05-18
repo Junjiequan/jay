@@ -10,7 +10,7 @@
     },
     {
         "id": "2",
-        "image": "./images/project-crowdFunding-image.jpg",
+        "image": "./images/project-crowd-funding-image.jpg",
         "alt":"project-crowdFunding-image",
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/crowdfunding-product-page-main",
@@ -28,7 +28,7 @@
     },
     {
         "id": "4",
-        "image": "./images/project-urlShorten-image.jpg",
+        "image": "./images/project-url-shorten-image.jpg",
         "alt":"project-urlShorten-image",
         "skill": ["html", "css","js", "api"],
         "live": "https://a331998513.github.io/projects/url-shortening-api-master/",
@@ -37,7 +37,7 @@
     },
     {
         "id": "5",
-        "image": "./images/project-ipTracker-image.jpg",
+        "image": "./images/project-ip-tracker-image.jpg",
         "alt":"project-ipTracker-image",
         "skill": ["html", "css", "js", "api"],
         "live": "https://a331998513.github.io/projects/ip-address-tracker-master/",
@@ -46,7 +46,7 @@
     },
     {
         "id": "6",
-        "image": "./images/project-jobListing-image.jpg",
+        "image": "./images/project-job-listing-image.jpg",
         "alt":"project-jobListing-image",
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/static-job-listings-master/",
@@ -64,7 +64,7 @@
     },
     {
         "id": "8",
-        "image": "./images/project-landingPage-image.jpg",
+        "image": "./images/project-landing-page-image.jpg",
         "alt":"project-landingPage-image",
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/clipboard-landing-page-master/",
