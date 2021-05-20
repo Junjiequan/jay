@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#121212">
-    <meta name="description" content="The first portfolio website created by Jay">
+    <meta name="description" content="The portfolio website ver 1.0 of Jay">
     <meta name="keywords" content="Portfolio website">
     <meta name="author" content="Jay">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="./styles/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -45,94 +46,96 @@
             <span>👨🏻‍💻</span>
         </nav>
     </header>
-    <section class="hero">
-        <div class="hero__wrapper">
-            <h1 class="hero__visual"><span>Jay</span> Quan</h1>
-            <p class="hero__desc" data-js="font-animation">“ Love coding, love gaming, love exercise & love beautiful things. ”</p>
-            <div class="hero__buttons">
-                <a href="#about" class="hero__button"><span>About Jay</span></a>
-                <a href="#projects" class="hero__button"><span>View projects</span></a>
+    <main>
+        <section class="hero">
+            <div class="hero__wrapper">
+                <h1 class="hero__visual"><span>Jay</span> Quan</h1>
+                <p class="hero__desc" data-js="font-animation">“ Love coding, love gaming, love exercise & love beautiful things. ”</p>
+                <div class="hero__buttons">
+                    <a href="#about" class="hero__button"><span>About Jay</span></a>
+                    <a href="#projects" class="hero__button"><span>View projects</span></a>
+                </div>
+                <div class="hero__links">
+                    <a class="hero__icon" href="https://github.com/a331998513" aria-label="github-icon" target="_blank" rel="noopener noreferrer nofollow" ><i class="fab fa-github-square"></i></a>
+                    <a class="hero__icon" href="mailto: jaycontact7@gmail.com" aria-label="email-icon"><i class="fas fa-envelope-square"></i></a>
+                    <a class="hero__icon" href="https://www.linkedin.com/in/junjiequan1991/" aria-label="linkedin-icon" target="_blank" rel="noopener noreferrer nofollow" ><i class="fab fa-linkedin" ></i></a>
+                    <a role="button" tabindex="0" class="hero__icon hero__icon--weChat"  aria-label="wechat-icon" > 
+                        <span class="sr-only" aria-live="polite">This button displays China's social app ID of the creator</span> 
+                        <i class="fab fa-weixin"></i>
+                    </a>
+                </div>
+                <address class="hero__address">
+                    <p class="hero__location"><span> Current location</span> Esbjerg N 6715, Denmark</p>
+                </address>
             </div>
-            <div class="hero__links">
-                <a class="hero__icon" href="https://github.com/a331998513" aria-label="github-icon" target="_blank" rel="noopener noreferrer nofollow" ><i class="fab fa-github-square"></i></a>
-                <a class="hero__icon" href="mailto: jaycontact7@gmail.com" aria-label="email-icon"><i class="fas fa-envelope-square"></i></a>
-                <a class="hero__icon" href="https://www.linkedin.com/in/junjiequan1991/" aria-label="linkedin-icon" target="_blank" rel="noopener noreferrer nofollow" ><i class="fab fa-linkedin" ></i></a>
-                <a role="button" tabindex="0" class="hero__icon hero__icon--weChat"  aria-label="wechat-icon" > 
-                    <span class="sr-only" aria-live="polite">This button displays China's social app ID of the creator</span> 
-                    <i class="fab fa-weixin"></i>
-                </a>
-            </div>
-            <address class="hero__address">
-                <p class="hero__location"><span> Current location</span> Esbjerg N 6715, Denmark</p>
-            </address>
-        </div>
-    </section>
-    <section class="about" id="about">
-        <div class="about__wrapper">
-            <div class="about__profile">
-                <div class="about__image" ><img src="./images/about-image.jpg" alt="A nice looking image of working environment"></div>
-                <div class="about__info">
-                    <div class="about__desc">
-                        <h2 ><span class="about__desc--highlight">About</span> me</h2>
-                        <p class="about__desc--text" >
-                            A self taught front-end developer who loves coding & design.<br>
-                            My front-end learning journey started since January 2021.<br>
-                            I love to create things my own from scratch and also love to learn from other good developers.<br>
-                            I always strive to expand my knowledge of accessibility and looking for improvements for better user experiences.<br>
-                        </p>
-                        <h3>Educational background</h3>
-                        <p class="about__desc--text" >
-                            MSc in Economics and Business Administration<br>
-                            Bachelor top-up in International marketing and sales
-                        </p>
-                        <h3>Current Tech stacks</h3>
-                        <div class="about__techStack">
-                            <span class="about__techStack--hover" aria-label="html5-icon"><i class="fab fa-html5"></i></span>
-                            <span class="about__techStack--hover" aria-label="sass-icon"><i class="fab fa-sass"></i></span>
-                            <span class="about__techStack--hover" aria-label="javascript-icon"><i class="fab fa-js-square"></i></span>
-                            <span class="about__techStack--hover" aria-label="github-icon"><i class="fab fa-github"></i></span>
-                        </div>
-                        <h3>Tech stacks on study plan</h3>
-                        <div class="about__techStack">
-                            <span class="about__techStack--hover" aria-label="react-icon"><i class="fab fa-react"></i></span>
-                            <span class="about__techStack--hover" aria-label="nodeJS-icon"><i class="fab fa-node"></i></span>
-                            <span class="about__techStack--hover" aria-label="git-icon"><i class="fab fa-git-square"></i></span>
+        </section>
+        <section class="about" id="about">
+            <div class="about__wrapper">
+                <div class="about__profile">
+                    <div class="about__image" ><img src="./images/about-image.jpg" alt="A nice looking image of working environment"></div>
+                    <div class="about__info">
+                        <div class="about__desc">
+                            <h2 ><span class="about__desc--highlight">About</span> me</h2>
+                            <p class="about__desc--text" >
+                                A self taught front-end developer who loves coding & design.<br>
+                                My front-end learning journey started since January 2021.<br>
+                                I love to create things my own from scratch and also love to learn from other good developers.<br>
+                                I always strive to expand my knowledge of accessibility and looking for improvements for better user experiences.<br>
+                            </p>
+                            <h3>Educational background</h3>
+                            <p class="about__desc--text" >
+                                MSc in Economics and Business Administration<br>
+                                Bachelor top-up in International marketing and sales
+                            </p>
+                            <h3>Current Tech stacks</h3>
+                            <div class="about__techStack">
+                                <span class="about__techStack--hover" aria-label="html5-icon"><i class="fab fa-html5"></i></span>
+                                <span class="about__techStack--hover" aria-label="sass-icon"><i class="fab fa-sass"></i></span>
+                                <span class="about__techStack--hover" aria-label="javascript-icon"><i class="fab fa-js-square"></i></span>
+                                <span class="about__techStack--hover" aria-label="github-icon"><i class="fab fa-github"></i></span>
+                            </div>
+                            <h3>Tech stacks on study plan</h3>
+                            <div class="about__techStack">
+                                <span class="about__techStack--hover" aria-label="react-icon"><i class="fab fa-react"></i></span>
+                                <span class="about__techStack--hover" aria-label="nodeJS-icon"><i class="fab fa-node"></i></span>
+                                <span class="about__techStack--hover" aria-label="git-icon"><i class="fab fa-git-square"></i></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="projects" id ="projects">
-        <div class="projects__wrapper">
-            <h2 class="projects__title"><span class="projects__title--highlight">Project</span> portfolio<span class="projects__title--small">Frontend mentor challenges</span>
-            </h2>
-            <div class="portfolio" data-js="portfolio"></div>
-            <a href="https://a331998513.github.io/projects/" class="projects__button" target="_blank" rel="noopener noreferrer nofollow" ><span class="sr-only">Link to github page of Jay</span><span>More</span> <i class="fas fa-chevron-right"></i></a>
-        </div>
-    </section>
-    <section class="email" data-js="blur-trigger">
-        <button class="email__button" data-js="email-box-trigger" aria-label="open email sending box"><i class="far fa-comment-dots" data-js="email-box-btn-icon"></i></button>
-        <form class="email__wrapper" data-js="email-box"> 
-            <div class="popup-message" data-js="sending-success">
-                 <p>Message sending</p> <div class="lds-circle"><div></div></div>
+        </section>
+        <section class="projects" id ="projects">
+            <div class="projects__wrapper">
+                <h2 class="projects__title"><span class="projects__title--highlight">Project</span> portfolio<span class="projects__title--small">Frontend mentor challenges</span>
+                </h2>
+                <div class="portfolio" data-js="portfolio"></div>
+                <a href="https://a331998513.github.io/projects/" class="projects__button" target="_blank" rel="noopener noreferrer nofollow" ><span class="sr-only">Link to github page of Jay</span><span>More</span> <i class="fas fa-chevron-right"></i></a>
             </div>
-            <div class="email__inner-title">
-                Want to reach out to me ?  &nbsp;👇🏻
-            </div>
-            <div class="email__address"> 
-                <button type="button" data-js="dropdown-email-input" aria-label="open email address input"><i class="fas fa-chevron-circle-right" data-js="dropdown-icon"></i>Email</button> 
-                <input type="text" class="email__input-email" data-js="dropdown-input" placeholder="example@example.com 😉" aria-label="email address of sender" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"/>
-            </div>
-            <div class="email__subject">
-                <input type="text" class="email__input" placeholder="Subject" aria-label="subject of the email" name="subject" />
-            </div>
-            <div class="email__message">
-                <textarea  class="email__input" style="resize:none"rows="5" placeholder="I would love to hear from you. 😋" aria-label="message to be sent" name="message" required></textarea>
-            </div>
-            <input type="submit" class="email__submit" value="Submit" aria-label="send message" name="submit" />
-        </form>
-    </section>
+        </section>
+        <section class="email" data-js="blur-trigger">
+            <button class="email__button" data-js="email-box-trigger" aria-label="open email sending box"><i class="far fa-comment-dots" data-js="email-box-btn-icon"></i></button>
+            <form class="email__wrapper" data-js="email-box"> 
+                <div class="popup-message" data-js="sending-success">
+                     <p>Message sending</p> <div class="lds-circle"><div></div></div>
+                </div>
+                <div class="email__inner-title">
+                    Want to reach out to me ?  &nbsp;👇🏻
+                </div>
+                <div class="email__address"> 
+                    <button type="button" data-js="dropdown-email-input" aria-label="open email address input"><i class="fas fa-chevron-circle-right" data-js="dropdown-icon"></i>Email</button> 
+                    <input type="text" class="email__input-email" data-js="dropdown-input" placeholder="example@example.com 😉" aria-label="email address of sender" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"/>
+                </div>
+                <div class="email__subject">
+                    <input type="text" class="email__input" placeholder="Subject" aria-label="subject of the email" name="subject" />
+                </div>
+                <div class="email__message">
+                    <textarea  class="email__input" style="resize:none"rows="5" placeholder="I would love to hear from you. 😋" aria-label="message to be sent" name="message" required></textarea>
+                </div>
+                <input type="submit" class="email__submit" value="Submit" aria-label="send message" name="submit" />
+            </form>
+        </section>
+    </main>
     <footer class="footer">
         <div class="footer__wrapper">
             <p class="footer__text">Designed by Jay, Coded by Jay.<span>😁</span></p>
