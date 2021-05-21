@@ -21,8 +21,8 @@ const printData = (data)=>{
             <div class="portfolio__image">
                 <img src="${item.image}" alt="${item.alt}">
                 <div class="portfolio__image--hover">
-                    <a href="${item.live}" class="portfolio__button" target="__blank"><span>Live</span></a>
-                    <a href="${item.code}" class="portfolio__button" target="__blank"><span>Code</span></a>
+                    <a href="${item.live}" class="portfolio__button" target="__blank" rel="noopener noreferrer nofollow"><span>Live</span></a>
+                    <a href="${item.code}" class="portfolio__button" target="__blank" rel="noopener noreferrer nofollow"><span>Code</span></a>
                 </div>
             </div>
             <div class="portfolio__skills">
