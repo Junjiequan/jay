@@ -43,6 +43,7 @@ const close = ()=>{
 
 export const openEmail = ()=>{
     
+    
     trigger.addEventListener('click', ()=>{
         emailBox.style.display !== "block" ? open() : close()
     });
@@ -57,6 +58,9 @@ export const openEmail = ()=>{
             && e.target !== navContact) 
         close();
     })
+    document.addEventListener('keydown', (e)=>{
+        if(e.keyCode === 27 && emailBox.style.display === "block") trigger.click();
+    });
     dropdown.addEventListener('click', ()=>{
         if(dropdownIcon.style.transform === ""){
             dropdownIcon.style.transform = "rotate(90deg)" 

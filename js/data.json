@@ -6,7 +6,7 @@
         "skill": ["html", "css", "js", "api"],
         "live": "https://a331998513.github.io/projects/todo-app-main/",
         "code": "https://github.com/a331998513/projects/tree/main/todo-app-main",
-        "name": "todo app main"
+        "name": "Todo app"
     },
     {
         "id": "2",
@@ -15,7 +15,7 @@
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/crowdfunding-product-page-main",
         "code": "https://github.com/a331998513/projects/tree/main/crowdfunding-product-page-main",
-        "name": "crowdfunding product page main"
+        "name": "Product page with modal"
     },
     {
         "id": "3",
@@ -24,7 +24,7 @@
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/easybank-landing-page-master/",
         "code": "https://github.com/a331998513/projects/tree/main/easybank-landing-page-master",
-        "name": "easybank landing-page master"
+        "name": "Landing page easybank"
     },
     {
         "id": "4",
@@ -33,7 +33,7 @@
         "skill": ["html", "css","js", "api"],
         "live": "https://a331998513.github.io/projects/url-shortening-api-master/",
         "code": "https://github.com/a331998513/projects/tree/main/url-shortening-api-master",
-        "name": "Shortly URL shortening API Challenge"
+        "name": "Landing page URL shortener "
     },
     {
         "id": "5",
@@ -51,7 +51,7 @@
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/static-job-listings-master/",
         "code": "https://github.com/a331998513/projects/tree/main/static-job-listings-master",
-        "name": "static job listings master"
+        "name": "Static job listing"
     },
     {
         "id": "7",
@@ -69,6 +69,6 @@
         "skill": ["html", "css", "js"],
         "live": "https://a331998513.github.io/projects/clipboard-landing-page-master/",
         "code": "https://github.com/a331998513/projects/tree/main/clipboard-landing-page-master",
-        "name": "clipboard landing page master"
+        "name": "Landing page random"
     }
 ]
