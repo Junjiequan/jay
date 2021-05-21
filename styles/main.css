@@ -335,26 +335,47 @@ h2, h3, .popup-message span, .portfolio__skill {
 }
 .portfolio__skills {
   display: flex;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
 }
 .portfolio__skill {
+  cursor: default;
   display: flex;
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
+  padding-right: 0.8rem;
   text-transform: uppercase;
+  color: var(--color-title);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.portfolio__skill:not(:last-of-type)::after {
+  position: absolute;
+  content: "";
+  display: flex;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  align-items: center;
+  margin: auto;
+  border-radius: 100%;
+  width: 4px;
+  height: 4px;
+  background: rgba(177, 177, 177, 0.7);
 }
 .portfolio__skill--html {
-  color: #2d9595;
+  color: #992929;
 }
-.portfolio__skill--css {
+.portfolio__skill--scss {
   color: #244b9e;
 }
 .portfolio__skill--js {
-  color: #aa1313;
+  color: #b19516;
 }
 .portfolio__skill--api {
-  color: #279b27;
+  color: #8c2999;
 }
 .portfolio__title {
+  margin-top: 0.1rem;
+  cursor: default;
   font-size: 1.25rem;
 }
 @media screen and (max-width: 600px) {
@@ -1253,5 +1274,4 @@ p {
 }
 .footer__text span {
   padding-right: 1rem;
-  font-size: 1.25rem;
 }/*# sourceMappingURL=main.css.map */

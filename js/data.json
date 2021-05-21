@@ -3,7 +3,7 @@
         "id": "1",
         "image": "./images/project-todo-image.jpg",
         "alt":"project-todo-image",
-        "skill": ["html", "css", "js", "api"],
+        "skill": ["html", "scss", "js", "api"],
         "live": "https://a331998513.github.io/projects/todo-app-main/",
         "code": "https://github.com/a331998513/projects/tree/main/todo-app-main",
         "name": "Todo app"
@@ -12,7 +12,7 @@
         "id": "2",
         "image": "./images/project-crowd-funding-image.jpg",
         "alt":"project-crowdFunding-image",
-        "skill": ["html", "css", "js"],
+        "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/crowdfunding-product-page-main",
         "code": "https://github.com/a331998513/projects/tree/main/crowdfunding-product-page-main",
         "name": "Product page with modal"
@@ -21,7 +21,7 @@
         "id": "3",
         "image": "./images/project-easybank-image.jpg",
         "alt":"project-easybank-image",
-        "skill": ["html", "css", "js"],
+        "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/easybank-landing-page-master/",
         "code": "https://github.com/a331998513/projects/tree/main/easybank-landing-page-master",
         "name": "Landing page easybank"
@@ -30,7 +30,7 @@
         "id": "4",
         "image": "./images/project-url-shorten-image.jpg",
         "alt":"project-urlShorten-image",
-        "skill": ["html", "css","js", "api"],
+        "skill": ["html", "scss","js", "api"],
         "live": "https://a331998513.github.io/projects/url-shortening-api-master/",
         "code": "https://github.com/a331998513/projects/tree/main/url-shortening-api-master",
         "name": "Landing page URL shortener "
@@ -39,7 +39,7 @@
         "id": "5",
         "image": "./images/project-ip-tracker-image.jpg",
         "alt":"project-ipTracker-image",
-        "skill": ["html", "css", "js", "api"],
+        "skill": ["html", "scss", "js", "api"],
         "live": "https://a331998513.github.io/projects/ip-address-tracker-master/",
         "code": "https://github.com/a331998513/projects/tree/main/ip-address-tracker-master",
         "name": "IP Address Tracker"
@@ -48,7 +48,7 @@
         "id": "6",
         "image": "./images/project-job-listing-image.jpg",
         "alt":"project-jobListing-image",
-        "skill": ["html", "css", "js"],
+        "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/static-job-listings-master/",
         "code": "https://github.com/a331998513/projects/tree/main/static-job-listings-master",
         "name": "Static job listing"
@@ -57,7 +57,7 @@
         "id": "7",
         "image": "./images/project-room-image.jpg",
         "alt":"project-room-image",
-        "skill": ["html", "css", "js"],
+        "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/room-homepage-master/",
         "code": "https://github.com/a331998513/projects/tree/main/room-homepage-master",
         "name": "Room homepage"
@@ -66,7 +66,7 @@
         "id": "8",
         "image": "./images/project-landing-page-image.jpg",
         "alt":"project-landingPage-image",
-        "skill": ["html", "css", "js"],
+        "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/clipboard-landing-page-master/",
         "code": "https://github.com/a331998513/projects/tree/main/clipboard-landing-page-master",
         "name": "Landing page random"

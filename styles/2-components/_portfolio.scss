@@ -75,19 +75,38 @@
     }
     &__skills{
         display:flex;
-        margin-top:.5rem;
+        margin-top:.6rem;
     }
     &__skill{
+        cursor:default;
         display:flex;
-        margin-right:.5rem;
+        margin-right:.8rem;
+        padding-right:.8rem;
         text-transform:uppercase;
+        color:getColor(title);
         @extend %b-500;
+        transition:all .3s ease;
+        position:relative;
+        &:not(:last-of-type)::after{
+            position:absolute;
+            content:'';
+            display:flex;
+            bottom:0;top:0;right:0;
+            align-items:center;
+            margin:auto;
+            border-radius:100%;
+            width:4px;
+            height:4px;
+            background:rgba($color: #b1b1b1, $alpha: 0.7);
+        }
         &--html{ color:$html};
-        &--css{ color:$css};
+        &--scss{ color:$css};
         &--js{ color:$js};
         &--api{ color:$api};
     }
     &__title{
+        margin-top:.1rem;
+        cursor:default;
         font-size:rem(2);
         @extend %b-400;
     }

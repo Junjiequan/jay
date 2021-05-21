@@ -18,20 +18,19 @@ const printData = (data)=>{
         itemContainer.insertAdjacentHTML('beforeend',
         `
         <div class="portfolio__item" id="${item.id}">
-        <div class="portfolio__image">
-            <img src="${item.image}" alt="${item.alt}">
-            <div class="portfolio__image--hover">
-                <a href="${item.live}" class="portfolio__button" target="__blank"><span>Live</span></a>
-                <a href="${item.code}" class="portfolio__button" target="__blank"><span>Code</span></a>
+            <div class="portfolio__image">
+                <img src="${item.image}" alt="${item.alt}">
+                <div class="portfolio__image--hover">
+                    <a href="${item.live}" class="portfolio__button" target="__blank"><span>Live</span></a>
+                    <a href="${item.code}" class="portfolio__button" target="__blank"><span>Code</span></a>
+                </div>
             </div>
-        </div>
-    
-        <div class="portfolio__skills">
-        ${item.skill.map(skill =>{
-            return `<span class="portfolio__skill portfolio__skill--${skill}">${skill}</span>`
-        }).join('')}
-        </div>
-        <div class="portfolio__title">${item.name}</div>
+            <div class="portfolio__skills">
+            ${item.skill.map(skill =>{
+                return `<span class="portfolio__skill portfolio__skill--${skill}">${skill}</span>`
+            }).join('')}
+            </div>
+            <div class="portfolio__title">${item.name}</div>
         </div>
         `
         )
