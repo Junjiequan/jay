@@ -21,13 +21,11 @@
         background:$purpleTOblue;
         transition: all .3s ease-out;
     }
-    &:hover:before{
+    &:hover:before,
+    &:focus-within:before{
         width:100%;
     }
     &:active{
         transform:translateY(2px);
-    }
-    &:focus-within:before{
-        width:100%;
     }
 }
