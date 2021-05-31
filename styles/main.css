@@ -1222,8 +1222,9 @@ p {
   color: var(--color-text);
   position: relative;
 }
-.projects__filter-wrapper select:not(:focus-visible):focus {
-  outline: 0;
+.projects__filter-wrapper select:focus {
+  outline-offset: 0;
+  outline: 2px solid var(--color-gray);
 }
 .projects__filter-wrapper option {
   font-size: 0.8125rem;

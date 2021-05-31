@@ -66,8 +66,9 @@
             border: 1px solid getColor(gray);
             color:getColor(text);
             position:relative;
-            &:not(:focus-visible):focus{
-                outline:0;
+            &:focus{
+                outline-offset:0;
+                outline:2px solid getColor(gray);
             }
         }
         option{
