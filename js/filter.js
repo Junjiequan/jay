@@ -1,8 +1,4 @@
 const filter = document.querySelector('[data-js="projects-filter"]');
-const btnAll = filter.querySelector('#all');
-const btnJs = filter.querySelector('#js');
-const btnStyle = filter.querySelector('#styling');
-
 const displayItem = (item)=>{
     setTimeout(()=>{
         item.style.display = 'flex';
@@ -18,33 +14,13 @@ const hideItem = (item)=>{
     }, 300);
 }
 
-export const portfolioFilter = (e) =>{
-    e.preventDefault();
+const portfolioFilter = (event) =>{
+    'use strict';
     const portfolios = document.querySelectorAll('.portfolio__item');
     const btn = filter.querySelectorAll('button');
-    const event = e.target;
-    btn.forEach(item=>{
-        switch (event){
-            case 'all':
-                item.id === 'all'
-                ? item.style.color = 'hsl(272, 76%, 53%)'
-                : item.style.color = 'hsl(0, 0%, 22%)';
-                break;
-            case 'js':
-                item.id === 'js'
-                ? item.style.color = 'hsl(272, 76%, 53%)'
-                : item.style.color = 'hsl(0, 0%, 22%)';
-                break;
-            case 'styling':
-                item.id === 'styling'
-                ? item.style.color = 'hsl(272, 76%, 53%)'
-                : item.style.color = 'hsl(0, 0%, 22%)';
-                break;
-        }
-    })
+
     portfolios.forEach(item => {
-        
-        switch (event.id){
+        switch (event.value){
             case 'all':
                 hideItem(item);
                 displayItem(item);
@@ -52,7 +28,6 @@ export const portfolioFilter = (e) =>{
             case 'js':
                 hideItem(item);
                 if(item.dataset.id === 'javascript') displayItem(item)
-                // : hideItem(item);
                 break;
             case 'styling':
                 hideItem(item);
@@ -65,4 +40,8 @@ export const portfolioFilter = (e) =>{
     })
 } 
 
-filter.addEventListener('click', (e)=> portfolioFilter(e))
+filter.addEventListener('change', (e)=>{
+    portfolioFilter(e.target);
+});
+
+export {portfolioFilter}; 

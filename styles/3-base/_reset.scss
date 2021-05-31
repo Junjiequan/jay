@@ -7,7 +7,8 @@
 }
 
 *:focus-visible,
-a:focus-visible{
+a:focus-visible,
+select:focus-visible{
   outline: 3px dashed getColor(purple);
   outline-offset: 5px;
   transition:outline .3s ease;

@@ -75,7 +75,7 @@ h2, h3, .popup-message span, .portfolio__skill {
   font-weight: 500;
 }
 
-.hero__visual span, .hero__icon--weChat::before, .email__submit {
+.projects__filter-wrapper select, .hero__visual span, .hero__icon--weChat::before, .email__submit {
   font-weight: 600;
 }
 
@@ -260,7 +260,7 @@ h2, h3, .popup-message span, .portfolio__skill {
 
 .portfolio {
   width: 100%;
-  margin-top: 2.3rem;
+  margin-top: 1.8rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-template-rows: auto;
@@ -536,7 +536,8 @@ path:nth-child(6) {
 }
 
 *:focus-visible,
-a:focus-visible {
+a:focus-visible,
+select:focus-visible {
   outline: 3px dashed var(--color-purple);
   outline-offset: 5px;
   transition: outline 0.3s ease;
@@ -1204,33 +1205,34 @@ p {
   font-size: 0.75rem;
   color: var(--color-text);
 }
-.projects__filter {
+.projects__filter-wrapper {
+  position: relative;
   margin-top: 3rem;
   display: flex;
-  padding: 0.5rem 0.7rem;
+  justify-content: flex-end;
+  width: 100%;
 }
-.projects__button-filter {
-  padding: 0 1rem;
+.projects__filter-wrapper select {
+  border-radius: 2px;
+  padding: 0.5rem;
+  width: 8rem;
+  font-size: 0.8125rem;
+  box-shadow: 0 3px 7px rgba(172, 172, 172, 0.2);
+  border: 1px solid var(--color-gray);
+  color: var(--color-text);
   position: relative;
-  transition: color 0.3s ease;
-  color: var(--color-title);
 }
-.projects__button-filter:not(:last-child):after {
-  pointer-events: none;
-  position: absolute;
-  content: "";
+.projects__filter-wrapper select:not(:focus-visible):focus {
+  outline: 0;
+}
+.projects__filter-wrapper option {
+  font-size: 0.8125rem;
+  padding-left: 0.5rem;
+}
+.projects__filter-select {
   display: flex;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  align-items: center;
-  margin: auto 0;
-  width: 1px;
-  height: 60%;
-  background: var(--color-text);
-}
-.projects__button-filter:hover {
-  color: var(--color-purple);
+  padding-left: 0.5rem;
+  justify-content: flex-start;
 }
 .projects__button {
   margin-top: 3rem;
@@ -1264,7 +1266,7 @@ p {
   .projects__wrapper {
     margin: 0;
   }
-  .projects__filter {
+  .projects__filter-wrapper {
     margin-top: 1.5rem;
   }
   .projects__title {
@@ -1289,6 +1291,9 @@ p {
     justify-content: center;
     padding: 0;
     line-height: 1.5rem;
+  }
+  .projects__filter-wrapper {
+    padding: 0 1rem;
   }
 }
 

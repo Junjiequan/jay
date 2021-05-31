@@ -124,10 +124,13 @@
             <div class="projects__wrapper">
                 <h2 class="projects__title"><span class="projects__title--highlight">Project</span> portfolio<span class="projects__title--small">Mostly frontend mentor challenges</span>
                 </h2>
-                <div class="projects__filter" data-js="projects-filter">
-                    <button class="projects__button-filter"  id="all" aria-label="filter button for all projects">All</button>
-                    <button class="projects__button-filter"  id="js" aria-label="filter button for all javascript heavy projects" >JS heavy</button>
-                    <button class="projects__button-filter"  id="styling" aria-label="filter button for all styling heavy projects" >Css heavy</button>
+                <div class="projects__filter-wrapper">
+                    <label class="sr-only" for="portfolio-filter"> Portfolio selection filter button</label>
+                    <select class="Projects__filter-select" name="portfolio-filter" data-js="projects-filter" >
+                        <option value="all">All</option>
+                        <option value="js">Apps</option>
+                        <option value="styling">Single Pages</option>
+                    </select>
                 </div>
                 <div class="portfolio" data-js="portfolio"></div>
                 <a href="https://a331998513.github.io/projects/" class="projects__button" target="_blank" rel="noopener noreferrer nofollow" ><span class="sr-only">Link to github page of Jay</span><span>More</span> <i class="fas fa-chevron-right"></i></a>
