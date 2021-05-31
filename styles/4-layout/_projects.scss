@@ -50,6 +50,31 @@
             color:getColor(text);
         }
     }
+    &__filter{
+        margin-top:3rem;
+        display:flex;
+        padding:.5rem .7rem;
+    }
+    &__button-filter{
+        padding:0 1rem;
+        position:relative;
+        transition: color .3s ease;
+        &:not(:last-child):after{
+            pointer-events: none;
+            position:absolute;
+            content:'';
+            display:flex;
+            right:0;top:0;bottom:0;
+            align-items:center;
+            margin:auto 0;
+            width:1px;
+            height:60%;
+            background:getColor(text);
+        }
+        &:hover{
+            color:getColor(purple);
+        }
+    }
     &__button{
         margin-top:3rem;
         display:flex;
@@ -83,6 +108,9 @@
     @media screen and (max-width:600px){
         &__wrapper{
             margin:0;
+        }
+        &__filter{
+            margin-top:1.5rem;
         }
         &__title{
             justify-content:center;

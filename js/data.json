@@ -6,7 +6,8 @@
         "skill": ["html", "scss", "js", "api"],
         "live": "https://a331998513.github.io/projects/todo-app-main/",
         "code": "https://github.com/a331998513/projects/tree/main/todo-app-main",
-        "name": "Todo app"
+        "name": "Todo app",
+        "focus": "javascript"
     },
     {
         "id": "2",
@@ -15,7 +16,9 @@
         "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/crowdfunding-product-page-main",
         "code": "https://github.com/a331998513/projects/tree/main/crowdfunding-product-page-main",
-        "name": "Product page with modal"
+        "name": "Product page with modal",
+        "focus": "styling"
+        
     },
     {
         "id": "3",
@@ -24,7 +27,8 @@
         "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/easybank-landing-page-master/",
         "code": "https://github.com/a331998513/projects/tree/main/easybank-landing-page-master",
-        "name": "Landing page easybank"
+        "name": "Landing page easybank",
+        "focus": "styling"
     },
     {
         "id": "4",
@@ -33,7 +37,8 @@
         "skill": ["html", "scss","js", "api"],
         "live": "https://a331998513.github.io/projects/url-shortening-api-master/",
         "code": "https://github.com/a331998513/projects/tree/main/url-shortening-api-master",
-        "name": "Landing page URL shortener "
+        "name": "Landing page URL shortener ",
+        "focus": "styling"
     },
     {
         "id": "5",
@@ -42,7 +47,8 @@
         "skill": ["html", "scss", "js", "api"],
         "live": "https://a331998513.github.io/projects/ip-address-tracker-master/",
         "code": "https://github.com/a331998513/projects/tree/main/ip-address-tracker-master",
-        "name": "IP Address Tracker"
+        "name": "IP Address Tracker",
+        "focus": "javascript"
     },
     {
         "id": "6",
@@ -51,7 +57,8 @@
         "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/static-job-listings-master/",
         "code": "https://github.com/a331998513/projects/tree/main/static-job-listings-master",
-        "name": "Static job listing"
+        "name": "Static job listing",
+        "focus": "javascript"
     },
     {
         "id": "7",
@@ -60,7 +67,8 @@
         "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/room-homepage-master/",
         "code": "https://github.com/a331998513/projects/tree/main/room-homepage-master",
-        "name": "Room homepage"
+        "name": "Room homepage",
+        "focus": "styling"
     },
     {
         "id": "8",
@@ -69,6 +77,27 @@
         "skill": ["html", "scss", "js"],
         "live": "https://a331998513.github.io/projects/clipboard-landing-page-master/",
         "code": "https://github.com/a331998513/projects/tree/main/clipboard-landing-page-master",
-        "name": "Landing page random"
+        "name": "Landing page random",
+        "focus": "styling"
+    },
+    {
+        "id": "9",
+        "image": "./images/project-tetris.jpg",
+        "alt":"project-tetris-image",
+        "skill": ["html", "css", "js"],
+        "live": "https://a331998513.github.io/practice/docs/Tetris/",
+        "code": "https://github.com/a331998513/practice/tree/main/docs/Tetris",
+        "name": "JS Tetris",
+        "focus": "javascript"
+    },
+    {
+        "id": "10",
+        "image": "./images/project-react-practice-image.jpg",
+        "alt":"project-react-practice-image",
+        "skill": ["react", "css"],
+        "live": "https://a331998513.github.io/react-profile/",
+        "code": "https://github.com/a331998513/react-profile",
+        "name": "React Practice",
+        "focus": "styling"
     }
 ]

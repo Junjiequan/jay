@@ -1,5 +1,4 @@
-const itemContainer = document.querySelector('[data-js="portfolio"]')
-
+const itemContainer = document.querySelector('[data-js="portfolio"]');
 export const getPortfolio = async function init(){
     try{
         const res = await fetch('./js/data.json');
@@ -11,13 +10,13 @@ export const getPortfolio = async function init(){
     } catch(err){
         console.log(err)
     }
-}
 
+}
 const printData = (data)=>{
     data.forEach(item => {
         itemContainer.insertAdjacentHTML('beforeend',
         `
-        <div class="portfolio__item" id="${item.id}">
+        <div class="portfolio__item" id="${item.id}" data-id="${item.focus}">
             <div class="portfolio__image">
                 <img src="${item.image}" alt="${item.alt}">
                 <div class="portfolio__image--hover">

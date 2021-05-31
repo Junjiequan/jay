@@ -104,14 +104,11 @@ h2, h3, .popup-message span, .portfolio__skill {
   background: linear-gradient(to right, #8d2ce2, #4b00e0);
   transition: all 0.3s ease-out;
 }
-.projects__button:hover:before, .hero__button:hover:before, .portfolio__button:hover:before {
+.projects__button:hover:before, .hero__button:hover:before, .portfolio__button:hover:before, .projects__button:focus-within:before, .hero__button:focus-within:before, .portfolio__button:focus-within:before {
   width: 100%;
 }
 .projects__button:active, .hero__button:active, .portfolio__button:active {
   transform: translateY(2px);
-}
-.projects__button:focus-within:before, .hero__button:focus-within:before, .portfolio__button:focus-within:before {
-  width: 100%;
 }
 
 .email {
@@ -263,12 +260,13 @@ h2, h3, .popup-message span, .portfolio__skill {
 
 .portfolio {
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 2.3rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   grid-template-rows: auto;
   grid-column-gap: 4rem;
   grid-row-gap: 2rem;
+  transition: all 0.3s ease;
 }
 .portfolio__item {
   display: flex;
@@ -276,6 +274,7 @@ h2, h3, .popup-message span, .portfolio__skill {
   height: 100%;
   flex-direction: column;
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 .portfolio__image {
   position: relative;
@@ -363,6 +362,12 @@ h2, h3, .popup-message span, .portfolio__skill {
 }
 .portfolio__skill--html {
   color: #992929;
+}
+.portfolio__skill--css {
+  color: #36a220;
+}
+.portfolio__skill--react {
+  color: #3c8686;
 }
 .portfolio__skill--scss {
   color: #244b9e;
@@ -1199,6 +1204,33 @@ p {
   font-size: 0.75rem;
   color: var(--color-text);
 }
+.projects__filter {
+  margin-top: 3rem;
+  display: flex;
+  padding: 0.5rem 0.7rem;
+}
+.projects__button-filter {
+  padding: 0 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.projects__button-filter:not(:last-child):after {
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  display: flex;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  align-items: center;
+  margin: auto 0;
+  width: 1px;
+  height: 60%;
+  background: var(--color-text);
+}
+.projects__button-filter:hover {
+  color: var(--color-purple);
+}
 .projects__button {
   margin-top: 3rem;
   display: flex;
@@ -1230,6 +1262,9 @@ p {
 @media screen and (max-width: 600px) {
   .projects__wrapper {
     margin: 0;
+  }
+  .projects__filter {
+    margin-top: 1.5rem;
   }
   .projects__title {
     justify-content: center;
