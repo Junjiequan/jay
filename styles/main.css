@@ -266,7 +266,7 @@ h2, h3, .popup-message span, .portfolio__skill {
   grid-template-rows: auto;
   grid-column-gap: 4rem;
   grid-row-gap: 2rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 .portfolio__item {
   display: flex;
@@ -274,7 +274,7 @@ h2, h3, .popup-message span, .portfolio__skill {
   height: 100%;
   flex-direction: column;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 .portfolio__image {
   position: relative;
@@ -1213,6 +1213,7 @@ p {
   padding: 0 1rem;
   position: relative;
   transition: color 0.3s ease;
+  color: var(--color-title);
 }
 .projects__button-filter:not(:last-child):after {
   pointer-events: none;

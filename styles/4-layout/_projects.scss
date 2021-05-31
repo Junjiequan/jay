@@ -59,6 +59,7 @@
         padding:0 1rem;
         position:relative;
         transition: color .3s ease;
+        color:getColor(title);
         &:not(:last-child):after{
             pointer-events: none;
             position:absolute;
