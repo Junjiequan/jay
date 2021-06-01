@@ -47,7 +47,6 @@
         display:none;
     }
     &__link{
-        cursor:pointer;
         position:relative;
         display:flex;
         height:100%;
@@ -71,15 +70,23 @@
                 transition: height .2s ease-in-out;
                 background:$purpleTOblue;
             }
+            &:hover,
+            &:focus-within{
+                color:getColor(purple);;
+            }
+            &:hover:after,
+            &:focus-within:after{
+                height:4px;
+            }
         }
-        &:hover a,
-        &:focus-within a{
-            color:getColor(purple);;
-        }
-        &:hover a::after,
-        &:focus-within a::after{
-            height:4px;
-        }
+        // &:hover a,
+        // &:focus-within a{
+        //     color:getColor(purple);;
+        // }
+        // &:hover a::after,
+        // &:focus-within a::after{
+        //     height:4px;
+        // }
     }
     @media screen and (max-width:600px){
         background:rgba($color: hsl(0, 0%, 3%), $alpha: 1);

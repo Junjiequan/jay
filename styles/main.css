@@ -745,7 +745,6 @@ p {
   display: none;
 }
 .nav__link {
-  cursor: pointer;
   position: relative;
   display: flex;
   height: 100%;
@@ -770,10 +769,10 @@ p {
   transition: height 0.2s ease-in-out;
   background: linear-gradient(to right, #8d2ce2, #4b00e0);
 }
-.nav__link:hover a, .nav__link:focus-within a {
+.nav__link a:hover, .nav__link a:focus-within {
   color: var(--color-purple);
 }
-.nav__link:hover a::after, .nav__link:focus-within a::after {
+.nav__link a:hover:after, .nav__link a:focus-within:after {
   height: 4px;
 }
 @media screen and (max-width: 600px) {
