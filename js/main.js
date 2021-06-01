@@ -1,12 +1,13 @@
 import {fontAnimation} from './font.js';
 import {navMobileToggle, navbarScroll} from './navbar.js';
 import {getPortfolio} from './portfolio.js';
-import {openEmail, sendEmail} from './email.js';
+import {openEmailBox} from './email.js';
 import {portfolioFilter} from './filter.js';
+
 getPortfolio();
-portfolioFilter;
 fontAnimation();
-openEmail();
-sendEmail;
+openEmailBox();
 navMobileToggle();
+portfolioFilter;
+
 document.addEventListener('scroll', navbarScroll);

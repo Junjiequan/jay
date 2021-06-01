@@ -9,6 +9,7 @@ const navContact = document.querySelector('[data-js="contact"]')
 const dropdown = document.querySelector('[data-js="dropdown-email-input"]')
 const dropdownIcon = document.querySelector('[data-js="dropdown-icon"]')
 const dropdownInput = document.querySelector('[data-js="dropdown-input"]')
+const form = document.querySelector('[data-js="email-box"]')
 
 const btnIconAnim = (icon) =>{
     triggerBtn.style.transform = "scale(0)"
@@ -17,87 +18,110 @@ const btnIconAnim = (icon) =>{
         triggerBtn.style.transform = "scale(1)"
     }, 180)
 }
-const open = ()=>{
+
+const emailInputDropdown = {
+    show(){
+        dropdownIcon.style.transform = "rotate(90deg)" 
+        dropdownInput.style.opacity = "1"
+        dropdownInput.style.margin = ".5rem 0"
+        dropdownInput.style.height = "2.4rem"
+    },
+    hide(){
+        dropdownIcon.style.transform = ""
+        dropdownInput.style.height = "0"
+        dropdownInput.style.margin = "0"
+        dropdownInput.style.opacity = "0"
+    }
+}
+
+const backgroundBlur = (backdrop='',background='')=>{
+    document.querySelector('.email--backDrop').style.backdropFilter = `${backdrop}`;    //FireFox does not support.
+    document.querySelector('.email--backDrop').style.background = `${background}`;      //Fallback.
+}
+
+//add backdrop blur to the background & open email-box
+const open = () =>{      
     bgTrigger.classList.add('email--backDrop')
-    document.querySelector('.email--backDrop').style.backdropFilter = "blur(2px)"
-    document.querySelector('.email--backDrop').style.background = "rgba(0,0,0,0.3)"  //backdropFilter fallback
     emailBox.style.display = "block";
     setTimeout(()=> emailBox.style.opacity= "1" , 50)
+    backgroundBlur("blur(2px)", "rgba(0,0,0,0.3)")
     btnIconAnim('fas fa-angle-down')
-
 }
-const close = ()=>{
-    document.querySelector('.email--backDrop').style.backdropFilter = ""
-    document.querySelector('.email--backDrop').style.background = ""    //backdropFilter fallback
+
+//remove backdrop blur & close email-box
+const close = () =>{ 
     emailBox.style.opacity = "0";
+    emailInputDropdown.hide
+    backgroundBlur();
+    btnIconAnim('far fa-comment-dots')
+
     setTimeout(()=>{
         bgTrigger.classList.remove('email--backDrop')
         emailBox.style.display = "none";
     },400);
-    dropdownIcon.style.transform = "";
-    dropdownInput.style.height = "0"
-    dropdownInput.style.margin = "0"
-    dropdownInput.style.opacity = "0"
-    btnIconAnim('far fa-comment-dots')
 }
 
-export const openEmail = ()=>{
-    
-    
-    trigger.addEventListener('click', ()=>{
-        emailBox.style.display !== "block" ? open() : close()
-    });
-    navContact.addEventListener('click', ()=>{
-        emailBox.style.display !== "block" ? open() : close()
-    });
+const openEmailBox = ()=>{
+    const emailBoxAct = function (){
+        emailBox.style.display !== "block" ? open() : close();
+    }
+
+    trigger.addEventListener('click', emailBoxAct);
+
+    navContact.addEventListener('click', emailBoxAct);
+
+    //click outsider close email-box
     document.addEventListener('click', (e)=>{
-        const parent = e.target.closest('[data-js="email-box"]')
-        if( emailBox.style.display === "block" 
-            && parent !== emailBox
-            && e.target !== trigger 
-            && e.target !== navContact) 
-        close();
-    })
-    document.addEventListener('keydown', (e)=>{
-        if(e.keyCode === 27 && emailBox.style.display === "block") trigger.click();
-    });
-    dropdown.addEventListener('click', ()=>{
-        if(dropdownIcon.style.transform === ""){
-            dropdownIcon.style.transform = "rotate(90deg)" 
-            dropdownInput.style.opacity = "1"
-            dropdownInput.style.margin = ".5rem 0"
-            dropdownInput.style.height = "2.4rem"
-        } else {
-            dropdownIcon.style.transform = "";
-            dropdownInput.style.height = "0"
-            dropdownInput.style.margin = "0"
-            dropdownInput.style.opacity = "0"
+        const notEmailBox = !e.target.closest('[data-js="email-box"]')
+        const notTrigger = e.target !== trigger;
+        const notNavContact = e.target !== navContact;
+        if( emailBox.style.display === "block"){
+            notEmailBox && notTrigger && notNavContact 
+            ? close() 
+            : false;
         }
     })
+    document.addEventListener('keydown', (e)=> e.key === 27 && emailBox.style.display === "block" ? trigger.click() : false);
+    dropdown.addEventListener('click', ()=> {
+        dropdownIcon.style.transform === "" 
+        ? emailInputDropdown.show() 
+        : emailInputDropdown.hide()
+    })
 }
 
-export const sendEmail = document.querySelector('form').addEventListener('submit', (e)=>{
+form.addEventListener('submit', (e)=>{
     e.preventDefault();
-    const form = e.target
-    popSuccess.style.opacity="1"
-    popSuccess.style.bottom = "9rem";
+
+    const openPopup = (text) =>{
+        popSuccess.innerHTML = `${text}`;
+        popSuccess.style.opacity="1"
+        popSuccess.style.bottom = "9rem";
+    }
+
+    const closePopup = (text) =>{
+        popSuccess.innerHTML = `${text}`;
+        setTimeout(()=>{
+            popSuccess.style.opacity="0"
+            popSuccess.style.bottom = "-10rem";
+        },2000)
+    }
+    const messageText = {
+        sending: `<p>Message sending</p> <div class="lds-circle"><div></div></div> `,
+        successed: `<p> <span>Message Received <i class="fas fa-check-square" style="margin-left:.5rem;"></i></span> </p>`,
+        failed: `<p>Message sending failed!</p> `
+    }
+
+    openPopup(messageText.sending);
+
     emailjs.sendForm('Gmail', 'FromPortfolio', form , 'user_TV8FyBqlJdT9MLqlMZjuh')
         .then(result => {
-            console.log('SUCCESS!', result.text)
-            popSuccess.innerHTML = `
-            <p> <span>Message Received <i class="fas fa-check-square" style="margin-left:.5rem;"></i></span> </p>
-            `
-            setTimeout(()=>{
-                popSuccess.style.opacity="0"
-                popSuccess.style.bottom = "-10rem";
-                setTimeout(()=>{
-                    popSuccess.innerHTML = `
-                    <p>Message sending</p> <div class="lds-circle"><div></div></div> 
-                    `
-                },2000)
-            },3000)
+            console.log('SUCCESS!', result.text);
+            closePopup(messageText.successed);
         }), error => {
-            console.log('FAILED...', error)
+            console.log('FAILED...', error);
+            closePopup(messageText.failed);
         }
         form.reset();
 })
+
+export {openEmailBox};

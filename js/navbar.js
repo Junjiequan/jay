@@ -2,6 +2,15 @@ const navMobile = document.querySelector('[data-js="nav-mobile"]')
 const navToggle = document.querySelector('[data-js="nav-toggle"]')
 let prevScrollpos = window.pageYOffset;
 
+const openMobNavBar = () =>{
+    navMobile.style.right = "0"
+    document.body.style.overflow = "hidden"
+}
+const closeMobNavBar = () =>{
+    navMobile.style.right = "-100%"
+    document.body.style.overflow = "auto"
+}
+
 export const navbarScroll = ()=>{
     let currentScrollpos = window.pageYOffset;
     if(currentScrollpos > 400){
@@ -13,21 +22,14 @@ export const navbarScroll = ()=>{
 }
 export const navMobileToggle = ()=>{
     document.addEventListener('click',(e)=>{
-        if(e.target === navToggle){
-            navToggle.classList.toggle('active')
-            if(navToggle.classList.contains('active')){
-                navMobile.style.right = "0"
-                document.body.style.overflow = "hidden"
-            } else {
-                navMobile.style.right = "-100%"
-                document.body.style.overflow = "auto"
-            }
-        } else {
-            if(navToggle.classList.contains('active')){
-                navToggle.classList.toggle('active')
-                navMobile.style.right = "-100%"
-                document.body.style.overflow = "auto"
-            }
+        const onClick = e.target;
+        if(onClick === navToggle){
+            navToggle.classList.toggle('active');
+            navToggle.classList.contains('active')? openMobNavBar() :  closeMobNavBar();
+        }
+        if(onClick !== navToggle && navToggle.classList.contains('active')){
+            navToggle.classList.toggle('active' );
+            closeMobNavBar();
         }
     })
 }
