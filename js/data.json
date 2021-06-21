@@ -1,4 +1,14 @@
-[
+[    
+    {
+        "id": "0",
+        "image": "./images/job-test.jpg",
+        "alt":"job-test-image",
+        "skill": ["html", "scss", "js", "api"],
+        "live": "https://a331998513.github.io/job_test/",
+        "code": "https://github.com/a331998513/job_test",
+        "name": "A job test",
+        "focus": "styling"
+    },
     {
         "id": "1",
         "image": "./images/project-todo-image.jpg",
