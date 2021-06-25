@@ -378,6 +378,9 @@ h2, h3, .popup-message span, .portfolio__skill {
 .portfolio__skill--api {
   color: #8c2999;
 }
+.portfolio__skill--styled {
+  color: #ad5214;
+}
 .portfolio__title {
   margin-top: 0.1rem;
   cursor: default;

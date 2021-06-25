@@ -1,5 +1,15 @@
 [    
     {
+        "id": "0+1",
+        "image": "./images/project-photosnap-multipage.png",
+        "alt":"job-test-image",
+        "skill": ["react", "styled", "api"],
+        "live": "https://a331998513.github.io/photosnap-frontend-challenge/#/",
+        "code": "https://github.com/a331998513/photosnap-frontend-challenge",
+        "name": "PhotoSnap Mutiple page",
+        "focus": "mutipage"
+    },
+    {
         "id": "0",
         "image": "./images/job-test.jpg",
         "alt":"job-test-image",

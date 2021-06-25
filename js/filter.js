@@ -30,6 +30,10 @@ const portfolioFilter = (event) =>{
                 hideItem(item);
                 if(item.dataset.id === 'styling') displayItem(item)
                 break;
+            case 'mutipage':
+                hideItem(item);
+                if(item.dataset.id === 'mutipage') displayItem(item)
+                break;
             default:
                 hideItem(item);
                 displayItem(item);

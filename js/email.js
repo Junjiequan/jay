@@ -44,7 +44,7 @@ const open = () =>{
     bgTrigger.classList.add('email--backDrop')
     emailBox.style.display = "block";
     setTimeout(()=> emailBox.style.opacity= "1" , 50)
-    backgroundBlur("blur(2px)", "rgba(0,0,0,0.3)")
+    backgroundBlur("blur(1px)", "rgba(0,0,0,0.4)")
     btnIconAnim('fas fa-angle-down')
 }
 
@@ -70,7 +70,7 @@ const openEmailBox = ()=>{
 
     navContact.addEventListener('click', emailBoxAct);
 
-    //click outsider close email-box
+    //click outsider to close email-box
     document.addEventListener('click', (e)=>{
         const notEmailBox = !e.target.closest('[data-js="email-box"]')
         const notTrigger = e.target !== trigger;
