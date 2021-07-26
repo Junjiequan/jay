@@ -34,21 +34,18 @@ const emailInputDropdown = {
     }
 }
 
-const backgroundBlur = (backdrop='',background='')=>{
-    document.querySelector('.email--backDrop').style.backdropFilter = `${backdrop}`;    //FireFox does not support.
-    document.querySelector('.email--backDrop').style.background = `${background}`;      //Fallback.
+const backgroundBlur = (background='')=>{
+    document.querySelector('.email--backDrop').style.background = `${background}`;    
 }
 
-//add backdrop blur to the background & open email-box
 const open = () =>{      
     bgTrigger.classList.add('email--backDrop')
     emailBox.style.display = "block";
     setTimeout(()=> emailBox.style.opacity= "1" , 50)
-    backgroundBlur("blur(1px)", "rgba(0,0,0,0.4)")
+    backgroundBlur("rgba(0,0,0,0.4)")
     btnIconAnim('fas fa-angle-down')
 }
 
-//remove backdrop blur & close email-box
 const close = () =>{ 
     emailBox.style.opacity = "0";
     emailInputDropdown.hide
