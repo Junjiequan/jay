@@ -45,14 +45,14 @@
   }
 }
 .light {
-  --color-white: white;
-  --color-lightGray: #cccccc;
-  --color-gray: #bababa;
-  --color-black: #121212;
-  --color-purpleToblue: linear-gradient(to right, #8d2ce2, #4b00e0);
-  --color-purple: #8d2ce2;
-  --color-text: #828282;
-  --color-title: #383838;
+  --color-white: hsl(0deg, 0%, 100%);
+  --color-lightGray: hsl(0deg, 0%, 80%);
+  --color-gray: hsl(0deg, 0%, 73%);
+  --color-black: hsl(0deg, 0%, 7%);
+  --color-purpleToblue: linear-gradient(to right, hsl(272deg, 76%, 53%), hsl(260deg, 100%, 44%));
+  --color-purple: hsl(272deg, 76%, 53%);
+  --color-text: hsl(0deg, 0%, 51%);
+  --color-title: hsl(0deg, 0%, 22%);
 }
 
 .hero__visual {
@@ -67,7 +67,7 @@ h1, p {
   font-weight: 300;
 }
 
-.about__desc--text, .hero__location span, .portfolio__title, .nav__link a {
+.about__desc--text, .hero__location span, .nav__link a, .portfolio__title {
   font-weight: 400;
 }
 
@@ -101,7 +101,7 @@ h2, h3, .popup-message span, .portfolio__skill {
   bottom: 0;
   right: 0;
   justify-content: center;
-  background: linear-gradient(to right, #8d2ce2, #4b00e0);
+  background: linear-gradient(to right, hsl(272deg, 76%, 53%), hsl(260deg, 100%, 44%));
   transition: all 0.3s ease-out;
 }
 .projects__button:hover:before, .hero__button:hover:before, .portfolio__button:hover:before, .projects__button:focus-within:before, .hero__button:focus-within:before, .portfolio__button:focus-within:before {
@@ -361,25 +361,25 @@ h2, h3, .popup-message span, .portfolio__skill {
   background: rgba(177, 177, 177, 0.7);
 }
 .portfolio__skill--html {
-  color: #992929;
+  color: hsl(0deg, 58%, 38%);
 }
 .portfolio__skill--css {
-  color: #36a220;
+  color: hsl(110deg, 67%, 38%);
 }
 .portfolio__skill--react {
-  color: #3c8686;
+  color: hsl(180deg, 38%, 38%);
 }
 .portfolio__skill--scss {
-  color: #244b9e;
+  color: hsl(221deg, 63%, 38%);
 }
 .portfolio__skill--js {
-  color: #b19516;
+  color: hsl(49deg, 78%, 39%);
 }
 .portfolio__skill--api {
-  color: #8c2999;
+  color: hsl(293deg, 58%, 38%);
 }
 .portfolio__skill--styled {
-  color: #ad5214;
+  color: hsl(24deg, 79%, 38%);
 }
 .portfolio__title {
   margin-top: 0.1rem;
@@ -472,7 +472,7 @@ h2, h3, .popup-message span, .portfolio__skill {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: white;
+  background: hsl(0deg, 0%, 100%);
   -webkit-animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
           animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
@@ -615,7 +615,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background: #e0e0e0;
+  background: hsl(0deg, 0%, 88%);
   overflow-x: hidden;
 }
 
@@ -770,7 +770,7 @@ p {
   width: 100%;
   height: 0;
   transition: height 0.2s ease-in-out;
-  background: linear-gradient(to right, #8d2ce2, #4b00e0);
+  background: linear-gradient(to right, hsl(272deg, 76%, 53%), hsl(260deg, 100%, 44%));
 }
 .nav__link a:hover, .nav__link a:focus-within {
   color: var(--color-purple);
@@ -880,7 +880,7 @@ p {
   letter-spacing: 0.0625rem;
 }
 .hero__visual span {
-  background: -webkit-gradient(linear, left bottom, right top, from(#8d2ce2), to(#675add));
+  background: -webkit-gradient(linear, left bottom, right top, from(hsl(272deg, 76%, 53%)), to(hsl(246deg, 66%, 61%)));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1173,6 +1173,12 @@ p {
   align-items: center;
   flex-direction: column;
 }
+.projects__wrapper-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: flex;
+  width: 100%;
+}
 .projects__title {
   position: relative;
   display: flex;
@@ -1208,13 +1214,14 @@ p {
   color: var(--color-text);
 }
 .projects__filter-wrapper {
-  position: relative;
+  position: absolute;
   margin-top: 3rem;
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
 .projects__filter-wrapper select {
+  top: -3.3rem;
   border-radius: 2px;
   padding: 0.5rem;
   width: 8rem;
@@ -1241,7 +1248,7 @@ p {
   margin-top: 3rem;
   display: flex;
   justify-content: center;
-  background: linear-gradient(to right, #8d2ce2, #4b00e0);
+  background: linear-gradient(to right, hsl(272deg, 76%, 53%), hsl(260deg, 100%, 44%));
   padding: 0.7rem 1.5rem;
   letter-spacing: 0.42rem;
   text-transform: uppercase;
@@ -1296,6 +1303,7 @@ p {
     line-height: 1.5rem;
   }
   .projects__filter-wrapper {
+    display: none;
     padding: 0 1rem;
   }
 }

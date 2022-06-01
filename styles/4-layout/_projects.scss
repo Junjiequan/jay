@@ -16,6 +16,12 @@
         align-items:center;
         flex-direction:column;
     }
+    &__wrapper-header {
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: flex;
+        width:100%;
+    }
     &__title{
         position:relative;
         display:flex;
@@ -51,12 +57,13 @@
         }
     }
     &__filter-wrapper{
-        position:relative;
+        position: absolute;
         margin-top:3rem;
         display:flex;
         justify-content: flex-end;
         width:100%;
         select{
+            top: -3.3rem;
             border-radius:2px;
             padding:.5rem;
             width:8rem;
@@ -141,6 +148,7 @@
             }
         }
         &__filter-wrapper{
+            display: none;
             padding:0 1rem;
         }
     }

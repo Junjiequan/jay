@@ -12,6 +12,28 @@ export const getPortfolio = async function init(){
     }
 
 }
+
+const skillLabelHover = (skill) =>{
+    switch(skill) {
+        case 'html':
+            return 'HTML5';
+        case 'js':
+            return 'Javascript';
+        case 'css':
+            return 'Css3';
+        case 'react':
+            return 'React & Hook';
+        case 'scss':
+            return 'Sass';
+        case 'styled': 
+            return 'Styled-component';
+        case 'api':
+            return 'Consumes API';
+        default:
+            return null;
+    }
+}
+
 const printData = (data)=>{
     data.forEach(item => {
         itemContainer.insertAdjacentHTML('beforeend',
@@ -26,7 +48,10 @@ const printData = (data)=>{
             </div>
             <div class="portfolio__skills">
             ${item.skill.map(skill =>{
-                return `<span class="portfolio__skill portfolio__skill--${skill}">${skill}</span>`
+                console.log(skill)
+
+
+                return `<span class="portfolio__skill portfolio__skill--${skill}" title="${skillLabelHover(skill)}">${skill}</span>`
             }).join('')}
             </div>
             <div class="portfolio__title">${item.name}</div>
