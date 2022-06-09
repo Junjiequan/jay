@@ -4,8 +4,8 @@
         "image": "./images/project-product-feedback-app.png",
         "alt":"product-feedback-app-image",
         "skill": ["react", "styled"],
-        "live": "https://product-feedback-app.herokuapp.com",
-        "code": "https://github.com/a331998513/product-feedback-app",
+        "live": "https://fullstack-product-feedback-app.herokuapp.com/",
+        "code": "https://github.com/a331998513/fullstack",
         "name": "product-feedback-app",
         "focus": "javascript"
     },
