@@ -1,5 +1,15 @@
 [        
     {
+        "id": "0+4",
+        "image": "./images/project-kanban-app.jpg",
+        "alt":"kanban-app-image",
+        "skill": ["react", "scss"],
+        "live": "https://kanban-app-jay.netlify.app/",
+        "code": "https://github.com/a331998513/kanban_",
+        "name": "Kanban task management web app",
+        "focus": "javascript"
+    },
+    {
         "id": "0+3",
         "image": "./images/project-product-feedback-app.png",
         "alt":"product-feedback-app-image",
